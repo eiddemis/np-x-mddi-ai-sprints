@@ -1,0 +1,6 @@
+{
+  "name": "NP x MDDI AI Sprints",
+  "description": "Course Portal for NP x MDDI AI Sprints — Program Schedule, Workshop Files, and Details",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
