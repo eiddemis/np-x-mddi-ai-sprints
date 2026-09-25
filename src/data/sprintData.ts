@@ -603,6 +603,277 @@ CONSTRAINTS: "Never fabricate data. Mark uncertain items with [NEEDS HUMAN REVIE
 --------------------------------------------------
 - Do NOT input restricted or sensitive data into public sandboxes.
 - Always validate numerical or regulatory compliance outputs against official sources.`
+  },
+  {
+    id: 'res-12-sharepoint-browse',
+    fileNumber: '12',
+    title: '12 — SharePoint: Browse Policy Documents',
+    format: 'AI Prompt Template',
+    fileSize: 'Text Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    type: 'prompt',
+    description: 'ChatGPT Enterprise prompt to browse your SharePoint policy folder and identify relevant policy documents on employee travel, overtime, and technology procurement.',
+    filename: '12_SharePoint_Browse_Policy_Prompt.txt',
+    tags: ['File 12', 'AI Prompt', 'SharePoint', 'Policy Documents', 'Enterprise AI'],
+    usageTip: 'SharePoint Tip: Connect the SharePoint app in ChatGPT Enterprise first (click "+" then type "SharePoint"), then paste this prompt to locate policy documents.',
+    downloadContent: `Browse my policy document folder. Identify the policy documents relevant to employee travel, overtime and technology procurement.`
+  },
+  {
+    id: 'res-13-sharepoint-summary',
+    fileNumber: '13',
+    title: '13 — SharePoint: Summarise Policy Rules Table',
+    format: 'AI Prompt Template',
+    fileSize: 'Text Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    type: 'prompt',
+    description: 'Follow-up ChatGPT Enterprise prompt to read the identified policy documents and summarise travel, overtime, and procurement rules into a structured table with source citations.',
+    filename: '13_SharePoint_Summarise_Policy_Prompt.txt',
+    tags: ['File 13', 'AI Prompt', 'SharePoint', 'Policy Summary', 'Enterprise AI'],
+    usageTip: 'SharePoint Tip: Use this as the second prompt in the same SharePoint-connected chat, immediately after running File 12.',
+    downloadContent: `Read the relevant policy documents and summarise the rules I need to know for travel, overtime and procurement. Create a table with: topic, rule, threshold/limit and source document.`
+  },
+  {
+    id: 'res-14-weekly-report',
+    fileNumber: '14',
+    title: '14 — Weekly Management Report Prompt',
+    format: 'AI Prompt Template',
+    fileSize: 'Text Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    type: 'prompt',
+    description: 'Structured prompt for drafting a weekly management report from team project updates. Uses role, task, context and format framing to produce executive-ready summaries with clear action items.',
+    filename: '14_Weekly_Management_Report_Prompt.txt',
+    tags: ['File 14', 'AI Prompt', 'Management Report', 'Weekly Update', 'Enterprise AI'],
+    usageTip: 'Report Tip: Upload or paste your team\'s weekly project updates first, then send this prompt. Works with SharePoint-connected files or pasted text.',
+    downloadContent: `You are a project officer preparing the recurring management report from updates you receive from several project teams.
+Draft the weekly management report in a clear professional tone using simple English with the attached updates.
+Summarise progress, blockers, decision points and any deadlines that need attention.
+Format:
+1. Executive Summary
+2. Key Progress
+3. Risks and Blockers
+4. Decisions Needed
+5. Next Actions`
+  },
+  {
+    id: 'res-15-chart-prompt',
+    fileNumber: '15',
+    title: '15 — Project Status Chart Creation Prompt',
+    format: 'AI Prompt Template',
+    fileSize: 'Text Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    type: 'prompt',
+    description: 'Prompt to generate two management-ready charts from project portfolio data: a status breakdown chart (On Track / At Risk / Delayed) and a completion percentage ranking chart.',
+    filename: '15_Project_Status_Chart_Prompt.txt',
+    tags: ['File 15', 'AI Prompt', 'Chart', 'Data Visualisation', 'Enterprise AI'],
+    usageTip: 'Chart Tip: Run this prompt in the same chat as your uploaded project data (File 01). ChatGPT will generate both charts which you can download.',
+    downloadContent: `Create a chart showing the number of projects by schedule status: On Track, At Risk, and Delayed. Also create a second chart showing project completion percentage, sorted from lowest to highest. Make both suitable for a senior management briefing.`
+  },
+  {
+    id: 'res-16-full-briefing',
+    fileNumber: '16',
+    title: '16 — Full One-Page Management Briefing (.docx)',
+    format: 'AI Prompt Template',
+    fileSize: 'Text Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    type: 'prompt',
+    description: 'Prompt to generate a complete one-page management briefing in Word format (.docx), covering executive summary, portfolio status, top issues, decisions required, upcoming milestones, and two embedded charts.',
+    filename: '16_Full_Management_Briefing_Prompt.txt',
+    tags: ['File 16', 'AI Prompt', 'Management Briefing', 'Word Document', 'Enterprise AI'],
+    usageTip: 'Briefing Tip: Run this after uploading your project data (File 01). ChatGPT generates a downloadable .docx ready for senior management.',
+    downloadContent: `Based only on the uploaded project data, create a one-page management briefing for senior government management covering the Executive Summary, Portfolio Status, Top Issues Requiring Attention, Management Decisions / Support Required, and Upcoming Milestones. Include two simple charts showing the number of projects by status (On Track, At Risk and Delayed) and project completion from lowest to highest. Use simple, clear and professional language suitable for a senior government audience. Present the final briefing as a Word document (.docx).`
+  },
+  {
+    id: 'res-17-package-skill',
+    fileNumber: '17',
+    title: '17 — Package Analysis Workflow as a Skill',
+    format: 'AI Prompt Template',
+    fileSize: 'Text Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    type: 'prompt',
+    description: 'End-of-session prompt to package your full management analysis workflow (upload data → analyse → chart → report) as a reusable ChatGPT Skill your team can run with one click.',
+    filename: '17_Package_As_Skill_Prompt.txt',
+    tags: ['File 17', 'AI Prompt', 'ChatGPT Skill', 'Automation', 'Enterprise AI'],
+    usageTip: 'Skill Tip: Run this at the end of your management analysis chat. ChatGPT packages the full workflow into an installable Skill. Click "Install" when prompted — it may take a few tries.',
+    downloadContent: `Package what I have just done into a Skill.
+It should be McKinsey style – sleek and professional with insightful charts and recommendations.
+The audience is senior management.`
+  },
+  {
+    id: 'res-18-techscan-filter',
+    fileNumber: '18',
+    title: '18 — TechScan Step 5: Add Domain Filter Dropdown',
+    format: 'Vibe-Coding Prompt',
+    fileSize: 'Refinement Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    type: 'prompt',
+    description: 'Google AI Studio refinement prompt (Demo 1, Step 5) to add an interactive domain filter dropdown to the TechScan dashboard. All charts and metrics update instantly when the filter changes.',
+    filename: '18_TechScan_Step5_Add_Filter_Prompt.txt',
+    tags: ['File 18', 'Vibe-Coding', 'TechScan', 'Dashboard Filter', 'Google AI Studio'],
+    usageTip: 'TechScan Step 5: Paste into the same Google AI Studio chat after generating the initial dashboard (File 06).',
+    downloadContent: `Add a dropdown at the top that lets the user filter the entire dashboard by Domain. Include an option to view all domains together. Everything on the screen should update instantly when the filter changes.`
+  },
+  {
+    id: 'res-19-techscan-upload',
+    fileNumber: '19',
+    title: '19 — TechScan Step 7: Add Upload CSV Feature',
+    format: 'Vibe-Coding Prompt',
+    fileSize: 'Refinement Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    type: 'prompt',
+    description: 'Google AI Studio prompt (Demo 1, Step 7) to add a CSV data upload button to the TechScan dashboard. Officers can upload fresh technology data and the dashboard updates automatically — works offline.',
+    filename: '19_TechScan_Step7_Add_Upload_Prompt.txt',
+    tags: ['File 19', 'Vibe-Coding', 'TechScan', 'CSV Upload', 'Google AI Studio'],
+    usageTip: 'TechScan Step 7: After adding the filter (File 18), paste this prompt. Then use the TechScan Stress Test data (File 20) to test the upload feature.',
+    downloadContent: `Add an Upload CSV Data button at the top right. When the user uploads a new CSV file or paste CSV data in the same format as the sample, the dashboard should refresh with the new data automatically. Save the uploaded data so it is still there if the page is closed and reopened. No internet connection should be needed.`
+  },
+  {
+    id: 'res-20-techscan-stresstest',
+    fileNumber: '20',
+    title: '20 — TechScan Stress Test Dataset (CSV)',
+    format: 'CSV Dataset',
+    fileSize: '10 Rows × 10 Columns',
+    icon: 'FileSpreadsheet',
+    category: 'data',
+    type: 'spreadsheet',
+    description: 'Low-score technology dataset for stress-testing the TechScan dashboard. All scores fall below the 3.5 warning threshold — upload this via the dashboard\'s CSV upload button to watch all red/amber alerts activate.',
+    filename: '20_TechScan_StressTest_Data.csv',
+    tags: ['File 20', 'CSV Data', 'TechScan', 'Stress Test', 'Low Scores'],
+    usageTip: 'Stress Test Tip: After adding the Upload CSV feature (File 19), click the upload button and paste this data to see all warning thresholds activate across the dashboard.',
+    tableHeaders: ['Tech_ID', 'Domain', 'Technology_Name', 'TRL', 'Security_Score', 'Integration_Score', 'Vendor_Maturity_Score', 'Strategic_Value_Score', 'Overall_Impact', 'Key_Risk'],
+    tableRows: [
+      { Tech_ID: 'TS-01', Domain: 'Autonomous Systems', Technology_Name: 'Swarm Drone Navigation', TRL: 3, Security_Score: 2, Integration_Score: 1, Vendor_Maturity_Score: 2, Strategic_Value_Score: 3, Overall_Impact: 2.0, Key_Risk: 'High RF Jamming Susceptibility' },
+      { Tech_ID: 'TS-02', Domain: 'Sensors & Optics', Technology_Name: 'Quantum Gravimetry', TRL: 2, Security_Score: 3, Integration_Score: 1, Vendor_Maturity_Score: 1, Strategic_Value_Score: 2, Overall_Impact: 1.8, Key_Risk: 'Requires Cryogenic Cooling' },
+      { Tech_ID: 'TS-03', Domain: 'Cyber & Comms', Technology_Name: 'Post-Quantum Crypto', TRL: 3, Security_Score: 3, Integration_Score: 2, Vendor_Maturity_Score: 2, Strategic_Value_Score: 3, Overall_Impact: 2.6, Key_Risk: 'Legacy System Interoperability' },
+      { Tech_ID: 'TS-04', Domain: 'Advanced Materials', Technology_Name: 'Thermal Camouflage', TRL: 2, Security_Score: 2, Integration_Score: 2, Vendor_Maturity_Score: 1, Strategic_Value_Score: 2, Overall_Impact: 1.8, Key_Risk: 'Durability in Tropical Weather' },
+      { Tech_ID: 'TS-05', Domain: 'AI & Analytics', Technology_Name: 'Neuromorphic Edge Cameras', TRL: 3, Security_Score: 2, Integration_Score: 2, Vendor_Maturity_Score: 2, Strategic_Value_Score: 3, Overall_Impact: 2.4, Key_Risk: 'Hardware Supply Chain Bottleneck' },
+      { Tech_ID: 'TS-06', Domain: 'Power & Energy', Technology_Name: 'Solid-State Tactical Batteries', TRL: 2, Security_Score: 1, Integration_Score: 2, Vendor_Maturity_Score: 2, Strategic_Value_Score: 2, Overall_Impact: 1.8, Key_Risk: 'Thermal Runaway Risks' },
+      { Tech_ID: 'TS-07', Domain: 'Autonomous Systems', Technology_Name: 'USV Obstacle Avoidance', TRL: 3, Security_Score: 2, Integration_Score: 3, Vendor_Maturity_Score: 2, Strategic_Value_Score: 3, Overall_Impact: 2.6, Key_Risk: 'Harsh Sea State Degradation' },
+      { Tech_ID: 'TS-08', Domain: 'Cyber & Comms', Technology_Name: 'Zero-Trust Edge Segmentation', TRL: 4, Security_Score: 3, Integration_Score: 1, Vendor_Maturity_Score: 2, Strategic_Value_Score: 3, Overall_Impact: 2.6, Key_Risk: 'Policy Management Complexity' },
+      { Tech_ID: 'TS-09', Domain: 'Sensors & Optics', Technology_Name: 'Photonic SAR Imaging', TRL: 2, Security_Score: 2, Integration_Score: 1, Vendor_Maturity_Score: 1, Strategic_Value_Score: 3, Overall_Impact: 1.8, Key_Risk: 'Optical Component Alignment' },
+      { Tech_ID: 'TS-10', Domain: 'Advanced Materials', Technology_Name: 'Self-Healing Polymers', TRL: 2, Security_Score: 2, Integration_Score: 2, Vendor_Maturity_Score: 1, Strategic_Value_Score: 2, Overall_Impact: 1.8, Key_Risk: 'Repeatable Cycle Fatigue' }
+    ],
+    tsvContent: `Tech_ID\tDomain\tTechnology_Name\tTRL\tSecurity_Score\tIntegration_Score\tVendor_Maturity_Score\tStrategic_Value_Score\tOverall_Impact\tKey_Risk
+TS-01\tAutonomous Systems\tSwarm Drone Navigation\t3\t2\t1\t2\t3\t2.0\tHigh RF Jamming Susceptibility
+TS-02\tSensors & Optics\tQuantum Gravimetry\t2\t3\t1\t1\t2\t1.8\tRequires Cryogenic Cooling
+TS-03\tCyber & Comms\tPost-Quantum Crypto\t3\t3\t2\t2\t3\t2.6\tLegacy System Interoperability
+TS-04\tAdvanced Materials\tThermal Camouflage\t2\t2\t2\t1\t2\t1.8\tDurability in Tropical Weather
+TS-05\tAI & Analytics\tNeuromorphic Edge Cameras\t3\t2\t2\t2\t3\t2.4\tHardware Supply Chain Bottleneck
+TS-06\tPower & Energy\tSolid-State Tactical Batteries\t2\t1\t2\t2\t2\t1.8\tThermal Runaway Risks
+TS-07\tAutonomous Systems\tUSV Obstacle Avoidance\t3\t2\t3\t2\t3\t2.6\tHarsh Sea State Degradation
+TS-08\tCyber & Comms\tZero-Trust Edge Segmentation\t4\t3\t1\t2\t3\t2.6\tPolicy Management Complexity
+TS-09\tSensors & Optics\tPhotonic SAR Imaging\t2\t2\t1\t1\t3\t1.8\tOptical Component Alignment
+TS-10\tAdvanced Materials\tSelf-Healing Polymers\t2\t2\t2\t1\t2\t1.8\tRepeatable Cycle Fatigue`,
+    csvContent: `Tech_ID,Domain,Technology_Name,TRL,Security_Score,Integration_Score,Vendor_Maturity_Score,Strategic_Value_Score,Overall_Impact,Key_Risk
+TS-01,Autonomous Systems,Swarm Drone Navigation,3,2,1,2,3,2.0,High RF Jamming Susceptibility
+TS-02,Sensors & Optics,Quantum Gravimetry,2,3,1,1,2,1.8,Requires Cryogenic Cooling
+TS-03,Cyber & Comms,Post-Quantum Crypto,3,3,2,2,3,2.6,Legacy System Interoperability
+TS-04,Advanced Materials,Thermal Camouflage,2,2,2,1,2,1.8,Durability in Tropical Weather
+TS-05,AI & Analytics,Neuromorphic Edge Cameras,3,2,2,2,3,2.4,Hardware Supply Chain Bottleneck
+TS-06,Power & Energy,Solid-State Tactical Batteries,2,1,2,2,2,1.8,Thermal Runaway Risks
+TS-07,Autonomous Systems,USV Obstacle Avoidance,3,2,3,2,3,2.6,Harsh Sea State Degradation
+TS-08,Cyber & Comms,Zero-Trust Edge Segmentation,4,3,1,2,3,2.6,Policy Management Complexity
+TS-09,Sensors & Optics,Photonic SAR Imaging,2,2,1,1,3,1.8,Optical Component Alignment
+TS-10,Advanced Materials,Self-Healing Polymers,2,2,2,1,2,1.8,Repeatable Cycle Fatigue`,
+    downloadContent: `Tech_ID,Domain,Technology_Name,TRL,Security_Score,Integration_Score,Vendor_Maturity_Score,Strategic_Value_Score,Overall_Impact,Key_Risk
+TS-01,Autonomous Systems,Swarm Drone Navigation,3,2,1,2,3,2.0,High RF Jamming Susceptibility
+TS-02,Sensors & Optics,Quantum Gravimetry,2,3,1,1,2,1.8,Requires Cryogenic Cooling
+TS-03,Cyber & Comms,Post-Quantum Crypto,3,3,2,2,3,2.6,Legacy System Interoperability
+TS-04,Advanced Materials,Thermal Camouflage,2,2,2,1,2,1.8,Durability in Tropical Weather
+TS-05,AI & Analytics,Neuromorphic Edge Cameras,3,2,2,2,3,2.4,Hardware Supply Chain Bottleneck
+TS-06,Power & Energy,Solid-State Tactical Batteries,2,1,2,2,2,1.8,Thermal Runaway Risks
+TS-07,Autonomous Systems,USV Obstacle Avoidance,3,2,3,2,3,2.6,Harsh Sea State Degradation
+TS-08,Cyber & Comms,Zero-Trust Edge Segmentation,4,3,1,2,3,2.6,Policy Management Complexity
+TS-09,Sensors & Optics,Photonic SAR Imaging,2,2,1,1,3,1.8,Optical Component Alignment
+TS-10,Advanced Materials,Self-Healing Polymers,2,2,2,1,2,1.8,Repeatable Cycle Fatigue`
+  },
+  {
+    id: 'res-21-techscan-barchart',
+    fileNumber: '21',
+    title: '21 — TechScan Step 8: Add Tech Scores Bar Chart',
+    format: 'Vibe-Coding Prompt',
+    fileSize: 'Refinement Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    type: 'prompt',
+    description: 'Google AI Studio prompt (Demo 1, Step 8) to add a horizontal bar chart showing individual Overall Impact scores for every technology, sorted highest to lowest with a red-to-green colour scale.',
+    filename: '21_TechScan_Step8_Add_BarChart_Prompt.txt',
+    tags: ['File 21', 'Vibe-Coding', 'TechScan', 'Bar Chart', 'Google AI Studio'],
+    usageTip: 'TechScan Step 8: Paste into your Google AI Studio chat after completing Steps 5 and 7 to add the per-technology score chart.',
+    downloadContent: `Add a horizontal bar chart showing the individual 'Overall Impact' score for every 'Technology Name'. Sort the bars from highest score to lowest. Use a colour scale from red for low scores to green for high scores. Place this new chart below the Domain scores chart.`
+  },
+  {
+    id: 'res-22-techscan-insights',
+    fileNumber: '22',
+    title: '22 — TechScan Step 9: Add Key Insights Section',
+    format: 'Vibe-Coding Prompt',
+    fileSize: 'Refinement Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    type: 'prompt',
+    description: 'Google AI Studio prompt (Demo 1, Step 9) to add an automated Key Insights panel highlighting the top 2 highest-scoring technologies (Top Opportunities) and the lowest-scoring technology (Critical Watchlist) with its primary risk.',
+    filename: '22_TechScan_Step9_Add_Insights_Prompt.txt',
+    tags: ['File 22', 'Vibe-Coding', 'TechScan', 'Key Insights', 'Google AI Studio'],
+    usageTip: 'TechScan Step 9: This is the final refinement step for Demo 1. Paste it last to complete the full TechScan dashboard.',
+    downloadContent: `Add a 'Key Insights' section at the bottom that automatically highlights the top 2 highest-scoring technologies (Top Opportunities) and the 1 lowest-scoring technology (Critical Watchlist) based on the Overall Impact scores. Include the Primary Risk for the lowest-scoring item.`
+  },
+  {
+    id: 'res-23-policyassist-queries',
+    fileNumber: '23',
+    title: '23 — PolicyAssist Test Queries (4 Sample Questions)',
+    format: 'Test Query Set',
+    fileSize: '4 Sample Queries',
+    icon: 'Terminal',
+    category: 'prompts',
+    type: 'prompt',
+    description: 'Four realistic officer test queries to validate the PolicyAssist bot after setup — covering overseas hotel ceilings, software procurement rules, late-night taxi claims, and weekend overtime or TOIL entitlements.',
+    filename: '23_PolicyAssist_Test_Queries.txt',
+    tags: ['File 23', 'PolicyAssist', 'Test Queries', 'Vibe-Coding', 'Google AI Studio'],
+    usageTip: 'PolicyAssist Test Tip: After setting up the bot (File 09), test each query one at a time to validate that policy citations appear correctly.',
+    downloadContent: `POLICYASSIST TEST QUERIES
+
+Query 1 — Travel & Hotel Ceilings
+I am traveling to London for a conference. What is my hotel ceiling per night, and can I book Business Class if I am Grade 7?
+
+Query 2 — Software Procurement
+Can I buy a $3,000 developer software subscription using my personal corporate credit card?
+
+Query 3 — Late-Night Transport Claim
+I left the office at 9:30 PM after working late on project deployment. Am I eligible for a taxi claim home?
+
+Query 4 — Weekend Work & TOIL
+I worked 6 hours on Saturday for an urgent system patch. Will I receive overtime pay or Time-Off-In-Lieu?`
+  },
+  {
+    id: 'res-24-policyassist-extend',
+    fileNumber: '24',
+    title: '24 — PolicyAssist Extension Prompts (3 Enhancements)',
+    format: 'Vibe-Coding Prompts',
+    fileSize: '3 Extension Prompts',
+    icon: 'Zap',
+    category: 'prompts',
+    type: 'prompt',
+    description: 'Three follow-up prompts to extend the PolicyAssist bot: enforce strict professional grounding, add a helpdesk escalation path for out-of-scope queries, and generate a shareable standalone HTML chat interface.',
+    filename: '24_PolicyAssist_Extension_Prompts.txt',
+    tags: ['File 24', 'PolicyAssist', 'Extension', 'Vibe-Coding', 'Google AI Studio'],
+    usageTip: 'PolicyAssist Extension Tip: Run these three prompts sequentially in the same Google AI Studio chat to progressively enhance the bot after the initial build.',
+    downloadContent: `POLICYASSIST EXTENSION PROMPTS
+
+Extension 1 — Add Strict Grounding & Tone
+Ensure all responses adopt a concise, objective, and professional advisory tone. Never speculate — if a detail is not explicitly stated in the policy directives, clarify what is missing.
+
+Extension 2 — Add an Escalation Path
+If a query falls outside the provided reference documents or exceeds policy approval limits, explicitly direct the officer to the Central Procurement Office or Finance Helpdesk at helpdesk@defencetech.gov.sg.
+
+Extension 3 — Build a Shareable Chat Interface
+Generate a standalone HTML/JavaScript chat interface where officers can submit policy queries. Include document citation tags, confidence badges, and a DefenceTech banner placeholder.`
   }
 ];
 

@@ -14,7 +14,7 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const categories = [
-    { id: 'all', label: 'All Files (01–11)', count: RESOURCES.length },
+    { id: 'all', label: 'All Files (01–24)', count: RESOURCES.length },
     { id: 'data', label: 'Spreadsheets & Data', count: RESOURCES.filter(r => r.category === 'data').length },
     { id: 'prompts', label: 'AI Prompts & Specs', count: RESOURCES.filter(r => r.category === 'prompts').length },
     { id: 'governance', label: 'Frameworks & Cheatsheets', count: RESOURCES.filter(r => r.category === 'governance').length },
@@ -61,7 +61,7 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
         <div className="text-center max-w-3xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#112240] border border-[#64FFDA]/40 text-[#64FFDA] text-xs font-bold uppercase tracking-wider mb-4 shadow-lg glow-cyan">
             <ShieldCheck className="w-4 h-4 text-[#64FFDA]" />
-            <span>Numbered Course Files 01–11 · Copy & Paste Hub</span>
+            <span>Numbered Course Files 01–24 · Copy & Paste Hub</span>
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#E6F1FF] tracking-tight mb-4">
@@ -69,7 +69,7 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
           </h2>
           
           <p className="text-sm sm:text-base text-[#CCD6F6] leading-relaxed">
-            All 11 course files formatted in unified executive cards with one-click clipboard copy, structured table grids, and formatted prompt views. Fully compliant with enterprise laptop restriction policies.
+            All 24 course files formatted in unified executive cards with one-click clipboard copy, structured table grids, and formatted prompt views. Fully compliant with enterprise laptop restriction policies.
           </p>
         </div>
 
@@ -87,14 +87,14 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
                 </span>
               </h4>
               <p className="text-xs text-[#8892B0] mt-0.5 leading-relaxed">
-                If your company device blocks external file downloads or USB drives, use the <span className="text-[#64FFDA] font-semibold">Copy for Excel</span> and <span className="text-[#64FFDA] font-semibold">Copy Prompt</span> buttons. All 11 files are fully self-contained on this page with one-click copy.
+                If your company device blocks external file downloads or USB drives, use the <span className="text-[#64FFDA] font-semibold">Copy for Excel</span> and <span className="text-[#64FFDA] font-semibold">Copy Prompt</span> buttons. All 24 files are fully self-contained on this page with one-click copy.
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0A192F] border border-[#64FFDA]/30 text-[#64FFDA] text-xs font-bold whitespace-nowrap shadow-sm">
             <ShieldCheck className="w-4 h-4 text-[#64FFDA]" />
-            <span>Files 01–11 Self-Contained</span>
+            <span>Files 01–24 Self-Contained</span>
           </div>
         </div>
 
