@@ -14,6 +14,7 @@ export const Agenda: React.FC<AgendaProps> = ({ onSelectAgendaItem }) => {
   const categories = ['All', 'Morning', 'Afternoon', 'Closing'];
 
   const filteredItems = AGENDA_ITEMS.filter((item) => {
+    if (item.isBreak) return filter === 'All' && !searchQuery;
     const matchesCategory = filter === 'All' || item.category === filter;
     const matchesSearch =
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -77,7 +78,27 @@ export const Agenda: React.FC<AgendaProps> = ({ onSelectAgendaItem }) => {
 
         {/* Agenda Timeline List */}
         <div className="space-y-6">
-          {filteredItems.map((item, index) => (
+          {filteredItems.map((item, index) => {
+            if (item.isBreak) {
+              return (
+                <div
+                  key={item.id}
+                  className="flex items-center gap-4 px-6 py-3 rounded-xl border border-dashed border-[#64FFDA]/20 bg-[#0A192F]"
+                >
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#020C1B] text-[#8892B0] text-xs font-bold border border-[#8892B0]/20">
+                    <Clock className="w-3.5 h-3.5" />
+                    {item.time}
+                  </span>
+                  <span className="text-xs font-semibold text-[#8892B0] tracking-wide uppercase">
+                    {item.title}
+                  </span>
+                </div>
+              );
+            }
+
+            const sessionIndex = filteredItems.slice(0, index).filter(i => !i.isBreak).length;
+
+            return (
             <div
               key={item.id}
               className="bg-[#112240] hover:bg-[#1a2f52] border border-[#64FFDA]/20 border-immersive-accent rounded-2xl p-6 transition-all duration-300 shadow-xl relative group"
@@ -91,7 +112,7 @@ export const Agenda: React.FC<AgendaProps> = ({ onSelectAgendaItem }) => {
                       {item.time}
                     </span>
                     <span className="text-xs font-medium px-2.5 py-0.5 rounded bg-[#0A192F] text-[#8892B0]">
-                      Module #{index + 1}
+                      Module #{sessionIndex + 1}
                     </span>
                   </div>
 
@@ -150,7 +171,8 @@ export const Agenda: React.FC<AgendaProps> = ({ onSelectAgendaItem }) => {
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
 
           {filteredItems.length === 0 && (
             <div className="text-center py-12 bg-[#112240] rounded-2xl border border-[#64FFDA]/20">

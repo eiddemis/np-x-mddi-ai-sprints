@@ -5,6 +5,7 @@ export interface AgendaItem {
   subtitle: string;
   description: string;
   category: 'Morning' | 'Afternoon' | 'Closing';
+  isBreak?: boolean;
   humanFirstBadge?: {
     text: string;
     description: string;

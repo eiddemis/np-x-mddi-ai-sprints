@@ -4,7 +4,7 @@ export const AGENDA_ITEMS: AgendaItem[] = [
   {
     id: 'agenda-1',
     time: '09:00 - 09:30',
-    title: 'Welcome & Tool Setup',
+    title: 'Welcome & Tool Setup Check',
     subtitle: 'Onboarding & Platform Access Verification',
     description: 'Registration, security onboarding, and ensuring all participating officers successfully authenticate into the required enterprise AI platforms, sandbox environments, and vibe-coding suites.',
     category: 'Morning',
@@ -18,41 +18,7 @@ export const AGENDA_ITEMS: AgendaItem[] = [
   },
   {
     id: 'agenda-2',
-    time: '09:30 - 10:30',
-    title: '"I Can Do It Too!" (Enterprise AI)',
-    subtitle: 'Prompting, Skills, Custom Connectors & Custom GPTs',
-    description: 'Deep dive into advanced prompting strategies, building reusable Skills, integrating enterprise connectors, and assembling tailored Custom GPTs for everyday public sector and office workflows.',
-    category: 'Morning',
-    humanFirstBadge: {
-      text: 'Liberating Human Expertise',
-      description: 'Automating administrative work gives officers more time for important, mission-centric duties.'
-    },
-    keyTakeaways: [
-      'Design structured prompts with role, context, constraints, and target outputs',
-      'Configure enterprise connectors to query internal knowledge bases safely',
-      'Create custom workflow GPTs for contract review, technical summarization, and log analysis'
-    ],
-    toolsUsed: ['Enterprise AI Skills Library', 'Custom GPT Builder', 'Prompt Engineering Cheat Sheet'],
-    trainerNotes: 'Highlight privacy-preserving prompt techniques for internal documentation.'
-  },
-  {
-    id: 'agenda-3',
-    time: '10:45 - 11:30',
-    title: '"I Can Do It Too!" (Vibe-Coding)',
-    subtitle: 'Guided Live Demonstration on Rapid AI-Assisted Crafting',
-    description: 'A hands-on, follow-along live coding demonstration showing how officers with zero software background can build custom interactive utilities, internal tools, and dashboards using natural language vibe-coding.',
-    category: 'Morning',
-    keyTakeaways: [
-      'Master prompt-driven component generation and rapid iterative loops',
-      'Transform requirements into working web interfaces in under 20 minutes',
-      'Understand basic debugging techniques using conversational AI feedback'
-    ],
-    toolsUsed: ['Vibe-Coding Assistant', 'AI Studio', 'Tailwind & React Component Snippets'],
-    trainerNotes: 'Demonstrate building an automated document classifier from scratch in real time.'
-  },
-  {
-    id: 'agenda-4',
-    time: '11:30 - 12:45',
+    time: '09:30 - 11:30',
     title: 'Problem Statement Framing',
     subtitle: 'Root Cause Analysis with 5 Whys & 4Cs Framework',
     description: 'Participants dissect real workplace bottlenecks using structured problem-framing methods (5 Whys and 4Cs) to pinpoint operational pain points before attempting technical solutions.',
@@ -70,11 +36,67 @@ export const AGENDA_ITEMS: AgendaItem[] = [
     trainerNotes: 'Emphasize that AI should never be a solution searching for a problem. Start with human friction.'
   },
   {
+    id: 'break-1',
+    time: '11:30 - 11:45',
+    title: 'BREAK (Tea Break)',
+    subtitle: '',
+    description: '',
+    category: 'Morning',
+    isBreak: true,
+    keyTakeaways: [],
+    toolsUsed: []
+  },
+  {
+    id: 'agenda-3',
+    time: '11:45 - 12:30',
+    title: '"I Can Do It Too!" (Vibe-Coding)',
+    subtitle: 'Guided Live Demonstration on Rapid AI-Assisted Crafting',
+    description: 'A hands-on, follow-along live coding demonstration showing how officers with zero software background can build custom interactive utilities, internal tools, and dashboards using natural language vibe-coding.',
+    category: 'Morning',
+    keyTakeaways: [
+      'Master prompt-driven component generation and rapid iterative loops',
+      'Transform requirements into working web interfaces in under 20 minutes',
+      'Understand basic debugging techniques using conversational AI feedback'
+    ],
+    toolsUsed: ['Vibe-Coding Assistant', 'AI Studio', 'Tailwind & React Component Snippets'],
+    trainerNotes: 'Demonstrate building an automated document classifier from scratch in real time.'
+  },
+  {
+    id: 'break-2',
+    time: '12:30 - 13:30',
+    title: 'BREAK (LUNCH)',
+    subtitle: '',
+    description: '',
+    category: 'Morning',
+    isBreak: true,
+    keyTakeaways: [],
+    toolsUsed: []
+  },
+  {
+    id: 'agenda-4',
+    time: '13:30 - 14:45',
+    title: '"I Can Do It Too!" (Enterprise AI)',
+    subtitle: 'Prompting, Skills, Custom Connectors & Custom GPTs',
+    description: 'Deep dive into advanced prompting strategies, building reusable Skills, integrating enterprise connectors, and assembling tailored Custom GPTs for everyday public sector and office workflows.',
+    category: 'Afternoon',
+    humanFirstBadge: {
+      text: 'Liberating Human Expertise',
+      description: 'Automating administrative work gives officers more time for important, mission-centric duties.'
+    },
+    keyTakeaways: [
+      'Design structured prompts with role, context, constraints, and target outputs',
+      'Configure enterprise connectors to query internal knowledge bases safely',
+      'Create custom workflow GPTs for contract review, technical summarization, and log analysis'
+    ],
+    toolsUsed: ['Enterprise AI Skills Library', 'Custom GPT Builder', 'Prompt Engineering Cheat Sheet'],
+    trainerNotes: 'Highlight privacy-preserving prompt techniques for internal documentation.'
+  },
+  {
     id: 'agenda-5',
-    time: '13:45 - 15:45',
+    time: '14:45 - 16:45',
     title: '"We Can Do It!" (Rapid Prototyping)',
-    subtitle: 'Collaborative Group Sprint & Hands-on Build',
-    description: 'Cross-functional team sprint where participants build functional prototypes addressing their own department bottlenecks. Mentors provide real-time guidance on UI, logic, and output validation.',
+    subtitle: 'Collaborative Group Sprint & Hands-on Build (includes Tea Break)',
+    description: 'Cross-functional team sprint where participants build functional prototypes addressing their own department bottlenecks. Mentors provide real-time guidance on UI, logic, and output validation. A short tea break is included within this session.',
     category: 'Afternoon',
     humanFirstBadge: {
       text: 'Human Oversight & Accountability',
@@ -86,11 +108,11 @@ export const AGENDA_ITEMS: AgendaItem[] = [
       'Test edge cases, hallucinations, and safety constraints on synthetic test data'
     ],
     toolsUsed: ['Starter Sandbox Repo', 'Rapid Prototyping Kit', 'Human Checkpoint Matrix'],
-    trainerNotes: 'Roam tables actively. Challenge teams on how they verify AI outputs against ground truth.'
+    trainerNotes: 'Roam tables actively. Challenge teams on how they verify AI outputs against ground truth. Tea break is at trainer discretion within the session.'
   },
   {
     id: 'agenda-6',
-    time: '15:45 - 17:30',
+    time: '16:45 - 17:45',
     title: 'Showcase & Closing ("Human ROI" Peer Showcase)',
     subtitle: 'Team Pitches, Leadership Panel & Action Commitments',
     description: 'Teams pitch their working prototypes to peers and senior leaders. Pitches are evaluated on "Human ROI"—the quantifiable administrative hours saved and how those hours are reinvested into high-impact public service delivery.',
