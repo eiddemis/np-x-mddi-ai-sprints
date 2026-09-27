@@ -2,7 +2,11 @@ import React from 'react';
 import { Sparkles, ArrowRight, FolderOpen, CheckCircle2 } from 'lucide-react';
 import heroBg from '../assets/images/sprint_hero_bg.jpg';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onNavigateToResources: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onNavigateToResources }) => {
   return (
     <section className="relative overflow-hidden py-16 md:py-24 bg-[#0A192F] border-b border-[#112240]">
       {/* Background Graphic & Grid Overlay */}
@@ -67,13 +71,13 @@ export const Hero: React.FC = () => {
               <span>Explore Programme Agenda</span>
               <ArrowRight className="w-4 h-4" />
             </a>
-            <a
-              href="#resources"
+            <button
+              onClick={onNavigateToResources}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#112240] hover:bg-[#1d3557] text-[#CCD6F6] hover:text-[#64FFDA] border border-[#64FFDA]/30 hover:border-[#64FFDA] font-semibold text-sm transition-all cursor-pointer"
             >
               <FolderOpen className="w-4 h-4 text-[#64FFDA]" />
               <span>Access Course Resources</span>
-            </a>
+            </button>
           </div>
 
           {/* Quick Stats Bar */}

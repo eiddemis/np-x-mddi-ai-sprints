@@ -8,31 +8,29 @@ import { AgendaModal } from './components/AgendaModal';
 import { ResourceModal } from './components/ResourceModal';
 import { AgendaItem, ResourceItem } from './types';
 
+export type ActivePage = 'agenda' | 'resources';
+
 export default function App() {
+  const [activePage, setActivePage] = useState<ActivePage>('agenda');
   const [selectedAgendaItem, setSelectedAgendaItem] = useState<AgendaItem | null>(null);
   const [selectedResourceItem, setSelectedResourceItem] = useState<ResourceItem | null>(null);
 
   return (
     <div className="min-h-screen bg-[#0A192F] text-[#CCD6F6] font-sans selection:bg-[#64FFDA] selection:text-[#0A192F]">
-      {/* Header & Nav */}
-      <Header />
+      <Header currentPage={activePage} onNavigate={setActivePage} />
 
-      {/* Main Sections */}
       <main>
-        <Hero />
-
-        <Agenda
-          onSelectAgendaItem={(item) => setSelectedAgendaItem(item)}
-        />
-
-        <Resources
-          onSelectResource={(res) => setSelectedResourceItem(res)}
-        />
-
-        <CtaBanner />
+        {activePage === 'agenda' ? (
+          <>
+            <Hero onNavigateToResources={() => setActivePage('resources')} />
+            <Agenda onSelectAgendaItem={(item) => setSelectedAgendaItem(item)} />
+            <CtaBanner />
+          </>
+        ) : (
+          <Resources onSelectResource={(res) => setSelectedResourceItem(res)} />
+        )}
       </main>
 
-      {/* Interactive Modals */}
       <AgendaModal
         item={selectedAgendaItem}
         onClose={() => setSelectedAgendaItem(null)}
@@ -45,4 +43,3 @@ export default function App() {
     </div>
   );
 }
-

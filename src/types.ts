@@ -30,6 +30,7 @@ export interface ResourceItem {
   category?: 'data' | 'prompts' | 'governance' | 'case_study' | 'tools';
   session?: 'problem-framing' | 'enterprise-ai' | 'vibe-coding';
   subGroup?: string;
+  appSection?: string;
   type?: 'spreadsheet' | 'prompt' | 'document' | 'email' | 'code';
   tsvContent?: string;
   csvContent?: string;

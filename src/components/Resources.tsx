@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, ShieldCheck, Sparkles, BookOpen, Cpu, Code2 } from 'lucide-react';
+import { Search, ShieldCheck, BookOpen, Cpu, Code2 } from 'lucide-react';
 import { ResourceItem } from '../types';
 import { RESOURCES } from '../data/sprintData';
 import { ResourceCard } from './ResourceCard';
@@ -23,11 +23,14 @@ const SUB_GROUP_ORDER: Record<string, string[]> = {
 };
 
 const SUB_GROUP_DESCRIPTIONS: Record<string, string> = {
-  Apps: 'SharePoint connector + Daily Briefing',
   Skills: 'Analysis prompts, charts, reports & skill packaging',
   Reference: 'Prompt cheat sheet',
   'Demo 1: TechScan': 'Build the emerging-tech assessment dashboard step by step',
   'Demo 2: PolicyAssist': 'Build the claims & policy checker bot',
+};
+
+const APP_SECTION_ORDER: Record<string, string[]> = {
+  Apps: ['SharePoint', 'Outlook'],
 };
 
 export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
@@ -98,34 +101,6 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
             Course Files & <span className="text-[#64FFDA] text-glow">Copy-Paste Hub</span>
           </h2>
 
-          <p className="text-sm sm:text-base text-[#CCD6F6] leading-relaxed">
-            All 24 course files formatted in unified executive cards with one-click clipboard copy, structured table grids, and formatted prompt views. Fully compliant with enterprise laptop restriction policies.
-          </p>
-        </div>
-
-        {/* Corporate SOE / Laptop Restriction Help Banner */}
-        <div className="mb-10 p-4 sm:p-5 rounded-2xl bg-[#112240]/80 border border-[#64FFDA]/30 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-start gap-3">
-            <div className="p-2.5 rounded-xl bg-[#020C1B] border border-[#64FFDA]/30 text-[#64FFDA] flex-shrink-0 mt-0.5">
-              <Sparkles className="w-5 h-5 text-[#64FFDA]" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-[#E6F1FF] flex items-center gap-2">
-                <span>Laptop Restriction Notice</span>
-                <span className="text-[11px] px-2 py-0.5 rounded bg-[#64FFDA]/15 text-[#64FFDA] border border-[#64FFDA]/30 font-normal">
-                  No Download Policy
-                </span>
-              </h4>
-              <p className="text-xs text-[#8892B0] mt-0.5 leading-relaxed">
-                If your company device blocks external file downloads or USB drives, use the <span className="text-[#64FFDA] font-semibold">Copy for Excel</span> and <span className="text-[#64FFDA] font-semibold">Copy Prompt</span> buttons. All 24 files are fully self-contained on this page with one-click copy.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0A192F] border border-[#64FFDA]/30 text-[#64FFDA] text-xs font-bold whitespace-nowrap shadow-sm">
-            <ShieldCheck className="w-4 h-4 text-[#64FFDA]" />
-            <span>Files 01–24 Self-Contained</span>
-          </div>
         </div>
 
         {/* Session Filter Tabs + Search */}
@@ -195,9 +170,31 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
                 {SUB_GROUP_DESCRIPTIONS[group] && (
                   <p className="text-xs text-[#8892B0] mb-5 -mt-2 text-center">{SUB_GROUP_DESCRIPTIONS[group]}</p>
                 )}
-                <div className="space-y-8">
-                  {items.map(renderCard)}
-                </div>
+                {/* App sections (SharePoint / Outlook) within Apps group */}
+                {APP_SECTION_ORDER[group] ? (
+                  <div className="space-y-10">
+                    {APP_SECTION_ORDER[group].map(appSection => {
+                      const sectionItems = items.filter(r => r.appSection === appSection);
+                      if (sectionItems.length === 0) return null;
+                      return (
+                        <div key={appSection}>
+                          <div className="flex items-center gap-2 mb-5">
+                            <span className="text-[11px] font-bold text-[#8892B0] uppercase tracking-widest">{appSection}</span>
+                            <div className="h-px flex-1 bg-[#112240]" />
+                            <span className="text-[10px] text-[#8892B0] font-mono">{sectionItems.length}</span>
+                          </div>
+                          <div className="space-y-8">
+                            {sectionItems.map(renderCard)}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="space-y-8">
+                    {items.map(renderCard)}
+                  </div>
+                )}
               </div>
             ))}
           </div>
