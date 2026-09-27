@@ -12,8 +12,8 @@ type SessionTab = 'all' | 'problem-framing' | 'enterprise-ai' | 'vibe-coding';
 
 const SESSION_TABS: { id: SessionTab; label: string; icon: React.ReactNode; count: number }[] = [
   { id: 'all', label: 'All Files', icon: <ShieldCheck className="w-3.5 h-3.5" />, count: RESOURCES.length },
-  { id: 'problem-framing', label: 'Problem Framing', icon: <BookOpen className="w-3.5 h-3.5" />, count: RESOURCES.filter(r => r.session === 'problem-framing').length },
   { id: 'enterprise-ai', label: 'Enterprise AI', icon: <Cpu className="w-3.5 h-3.5" />, count: RESOURCES.filter(r => r.session === 'enterprise-ai').length },
+  { id: 'problem-framing', label: 'Problem Framing', icon: <BookOpen className="w-3.5 h-3.5" />, count: RESOURCES.filter(r => r.session === 'problem-framing').length },
   { id: 'vibe-coding', label: 'Vibe Coding', icon: <Code2 className="w-3.5 h-3.5" />, count: RESOURCES.filter(r => r.session === 'vibe-coding').length },
 ];
 
