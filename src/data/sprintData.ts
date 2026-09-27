@@ -49,17 +49,21 @@ export const AGENDA_ITEMS: AgendaItem[] = [
   {
     id: 'agenda-3',
     time: '11:45 - 12:30',
-    title: '"I Can Do It Too!" (Vibe-Coding)',
-    subtitle: 'Guided Live Demonstration on Rapid AI-Assisted Crafting',
-    description: 'A hands-on, follow-along live coding demonstration showing how officers with zero software background can build custom interactive utilities, internal tools, and dashboards using natural language vibe-coding.',
+    title: '"I Can Do It Too!" (Enterprise AI)',
+    subtitle: 'Prompting, Skills, Custom Connectors & Custom GPTs',
+    description: 'Deep dive into advanced prompting strategies, building reusable Skills, integrating enterprise connectors, and assembling tailored Custom GPTs for everyday public sector and office workflows.',
     category: 'Morning',
+    humanFirstBadge: {
+      text: 'Liberating Human Expertise',
+      description: 'Automating administrative work gives officers more time for important, mission-centric duties.'
+    },
     keyTakeaways: [
-      'Master prompt-driven component generation and rapid iterative loops',
-      'Transform requirements into working web interfaces in under 20 minutes',
-      'Understand basic debugging techniques using conversational AI feedback'
+      'Design structured prompts with role, context, constraints, and target outputs',
+      'Configure enterprise connectors to query internal knowledge bases safely',
+      'Create custom workflow GPTs for contract review, technical summarization, and log analysis'
     ],
-    toolsUsed: ['Vibe-Coding Assistant', 'AI Studio', 'Tailwind & React Component Snippets'],
-    trainerNotes: 'Demonstrate building an automated document classifier from scratch in real time.'
+    toolsUsed: ['Enterprise AI Skills Library', 'Custom GPT Builder', 'Prompt Engineering Cheat Sheet'],
+    trainerNotes: 'Highlight privacy-preserving prompt techniques for internal documentation.'
   },
   {
     id: 'break-2',
@@ -75,21 +79,17 @@ export const AGENDA_ITEMS: AgendaItem[] = [
   {
     id: 'agenda-4',
     time: '13:30 - 14:45',
-    title: '"I Can Do It Too!" (Enterprise AI)',
-    subtitle: 'Prompting, Skills, Custom Connectors & Custom GPTs',
-    description: 'Deep dive into advanced prompting strategies, building reusable Skills, integrating enterprise connectors, and assembling tailored Custom GPTs for everyday public sector and office workflows.',
+    title: '"I Can Do It Too!" (Vibe-Coding)',
+    subtitle: 'Guided Live Demonstration on Rapid AI-Assisted Crafting',
+    description: 'A hands-on, follow-along live coding demonstration showing how officers with zero software background can build custom interactive utilities, internal tools, and dashboards using natural language vibe-coding.',
     category: 'Afternoon',
-    humanFirstBadge: {
-      text: 'Liberating Human Expertise',
-      description: 'Automating administrative work gives officers more time for important, mission-centric duties.'
-    },
     keyTakeaways: [
-      'Design structured prompts with role, context, constraints, and target outputs',
-      'Configure enterprise connectors to query internal knowledge bases safely',
-      'Create custom workflow GPTs for contract review, technical summarization, and log analysis'
+      'Master prompt-driven component generation and rapid iterative loops',
+      'Transform requirements into working web interfaces in under 20 minutes',
+      'Understand basic debugging techniques using conversational AI feedback'
     ],
-    toolsUsed: ['Enterprise AI Skills Library', 'Custom GPT Builder', 'Prompt Engineering Cheat Sheet'],
-    trainerNotes: 'Highlight privacy-preserving prompt techniques for internal documentation.'
+    toolsUsed: ['Vibe-Coding Assistant', 'AI Studio', 'Tailwind & React Component Snippets'],
+    trainerNotes: 'Demonstrate building an automated document classifier from scratch in real time.'
   },
   {
     id: 'agenda-5',
