@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, ShieldCheck, BookOpen, Cpu, Code2 } from 'lucide-react';
+import { Search, ShieldCheck, Cpu, Code2 } from 'lucide-react';
 import { ResourceItem } from '../types';
 import { RESOURCES } from '../data/sprintData';
 import { ResourceCard } from './ResourceCard';
@@ -8,12 +8,11 @@ interface ResourcesProps {
   onSelectResource: (resource: ResourceItem) => void;
 }
 
-type SessionTab = 'all' | 'problem-framing' | 'enterprise-ai' | 'vibe-coding';
+type SessionTab = 'all' | 'enterprise-ai' | 'vibe-coding';
 
 const SESSION_TABS: { id: SessionTab; label: string; icon: React.ReactNode; count: number }[] = [
   { id: 'all', label: 'All Files', icon: <ShieldCheck className="w-3.5 h-3.5" />, count: RESOURCES.length },
   { id: 'enterprise-ai', label: 'Enterprise AI', icon: <Cpu className="w-3.5 h-3.5" />, count: RESOURCES.filter(r => r.session === 'enterprise-ai').length },
-  { id: 'problem-framing', label: 'Problem Framing', icon: <BookOpen className="w-3.5 h-3.5" />, count: RESOURCES.filter(r => r.session === 'problem-framing').length },
   { id: 'vibe-coding', label: 'Vibe Coding', icon: <Code2 className="w-3.5 h-3.5" />, count: RESOURCES.filter(r => r.session === 'vibe-coding').length },
 ];
 
@@ -51,6 +50,7 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
       const matchesSearch =
         searchQuery.trim() === '' ||
         (res.fileNumber && res.fileNumber.includes(searchQuery)) ||
+        (res.displayId && res.displayId.toLowerCase().includes(searchQuery.toLowerCase())) ||
         res.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         res.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         res.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase())) ||
@@ -93,13 +93,45 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
         <div className="text-center max-w-3xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#112240] border border-[#64FFDA]/40 text-[#64FFDA] text-xs font-bold uppercase tracking-wider mb-4 shadow-lg glow-cyan">
             <ShieldCheck className="w-4 h-4 text-[#64FFDA]" />
-            <span>Numbered Course Files 01–24 · Copy & Paste Hub</span>
+            <span>Course Resources</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#E6F1FF] tracking-tight mb-4">
-            Course Files & <span className="text-[#64FFDA] text-glow">Copy-Paste Hub</span>
+            Course <span className="text-[#64FFDA] text-glow">Resources</span>
           </h2>
 
+        </div>
+
+        {/* Section Jump Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8">
+          <button
+            onClick={() => { setSelectedSession('enterprise-ai'); setSearchQuery(''); }}
+            className={`group flex flex-col items-start gap-2 p-4 rounded-2xl border transition-all cursor-pointer text-left ${
+              selectedSession === 'enterprise-ai'
+                ? 'bg-[#1b345d] border-[#64FFDA]/60 shadow-lg shadow-[#64FFDA]/10'
+                : 'bg-[#112240] border-[#64FFDA]/20 hover:bg-[#1b345d] hover:border-[#64FFDA]/50'
+            }`}
+          >
+            <div className="flex items-center gap-2">
+              <Cpu className="w-4 h-4 text-[#64FFDA]" />
+              <span className="text-xs font-black uppercase tracking-wider text-[#64FFDA]">Enterprise AI</span>
+            </div>
+            <p className="text-[11px] text-[#8892B0] group-hover:text-[#CCD6F6] transition-colors">Apps · Skills</p>
+          </button>
+          <button
+            onClick={() => { setSelectedSession('vibe-coding'); setSearchQuery(''); }}
+            className={`group flex flex-col items-start gap-2 p-4 rounded-2xl border transition-all cursor-pointer text-left ${
+              selectedSession === 'vibe-coding'
+                ? 'bg-[#1b345d] border-[#64FFDA]/60 shadow-lg shadow-[#64FFDA]/10'
+                : 'bg-[#112240] border-[#64FFDA]/20 hover:bg-[#1b345d] hover:border-[#64FFDA]/50'
+            }`}
+          >
+            <div className="flex items-center gap-2">
+              <Code2 className="w-4 h-4 text-[#64FFDA]" />
+              <span className="text-xs font-black uppercase tracking-wider text-[#64FFDA]">Vibe Coding</span>
+            </div>
+            <p className="text-[11px] text-[#8892B0] group-hover:text-[#CCD6F6] transition-colors">TechScan Dashboard · PolicyAssist</p>
+          </button>
         </div>
 
         {/* Session Filter Tabs + Search */}
@@ -136,7 +168,7 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Filter by file number (01, 02...), topic..."
+                placeholder="Search by file ID (A1, T1, P1...) or keyword..."
                 className="w-full bg-[#112240] border border-[#64FFDA]/25 rounded-xl pl-10 pr-4 py-2 text-xs text-[#E6F1FF] placeholder-[#8892B0] focus:outline-none focus:border-[#64FFDA] transition-colors"
               />
               {searchQuery && (

@@ -357,41 +357,6 @@ Knowledge to upload:
 • Project governance framework`
   },
   {
-    id: 'res-05-case-portal-security',
-    fileNumber: '05',
-    title: '05 — Workplace Case Study: Security Review Escalation Email',
-    format: 'Workplace Email Sample',
-    fileSize: 'Email Correspondence',
-    icon: 'Mail',
-    category: 'case_study',
-    session: 'problem-framing',
-    type: 'email',
-    description: 'Realistic workplace escalation memo from a Project Manager seeking senior leadership intervention on cybersecurity deployment clearance dependencies.',
-    filename: '05_Customer_Service_Portal_Security_Escalation.txt',
-    tags: ['File 05', 'Case Study', 'Email Escalation', 'Security Review', 'Workplace Sample'],
-    usageTip: 'Simulation Case Study Tip: Use this realistic escalation email to test and roleplay how AI drafts management interventions for critical path risks.',
-    downloadContent: `Support Required: Security Review for Customer Service Portal Deployment
-
-Dear Ms Tan,
-
-I would like to seek your support on the pending security review for the Customer Service Portal Enhancement project.
-
-The project team is targeting production deployment on 18 September. However, we have not yet been able to secure a confirmed date for the security review. We have followed up with the Cybersecurity team, but understand that the review schedule is still being worked through due to competing commitments.
-
-The security review is required before we can proceed with deployment. If the review cannot be completed by 4 September, there is a risk that we will have insufficient time to address any findings before the planned production release.
-
-As the project team is unable to resolve the scheduling dependency directly, could we seek your support to engage the relevant management counterpart to confirm a review slot by 21 August?
-
-We will continue to follow up at the working level in parallel and will update you once the review date is confirmed.
-
-Thank you.
-
-Best regards,
-Daniel Lim
-Project Manager
-Customer Service Portal Enhancement`
-  },
-  {
     id: 'res-06-techscan-vibe',
     fileNumber: '06',
     displayId: 'T1',
@@ -607,43 +572,6 @@ Weekend operational duty is recognized via Time-Off-In-Lieu (TOIL) rather than m
 - Four (4) to eight (8) continuous duty hours: 0.5 Day TOIL credited.
 - Exceeding eight (8) continuous duty hours: 1.0 Day TOIL credited.
 4.3 Expiry: TOIL credits must be consumed within three (3) calendar months from the date of accrual. Unutilized TOIL will lapse automatically.`
-  },
-  {
-    id: 'res-10-whys-framing',
-    fileNumber: '10',
-    title: '10 — 5 Whys & 4Cs Problem Framing Template',
-    format: 'Framing Worksheet',
-    fileSize: 'Worksheet Template',
-    icon: 'FileText',
-    category: 'governance',
-    session: 'problem-framing',
-    type: 'document',
-    description: 'Structured worksheet to diagnose workplace bottlenecks, isolate root causes using 5 Whys, and define Context, Challenge, Core Impact & Capabilities (4Cs) before building.',
-    filename: '10_5Whys_4Cs_Problem_Framing_Template.txt',
-    tags: ['File 10', 'Problem Framing', 'Worksheet', 'Root Cause Analysis', 'Human ROI'],
-    usageTip: 'Problem Framing Tip: Complete the 5 Whys and 4Cs before writing code to validate the root cause and ensure human officers remain in the loop.',
-    downloadContent: `NP X MDDI AI SPRINTS - PROBLEM FRAMING WORKSHEET
-
-1. THE 5 WHYS ROOT CAUSE METHODOLOGY
---------------------------------------------------
-Problem Statement: [State the initial workplace bottleneck]
-Why #1: Why does this bottleneck occur?
-Why #2: Why does that happen?
-Why #3: Why is that constraint in place?
-Why #4: Why haven't we automated or streamlined this?
-Why #5: Root Cause Identified: [Core systemic or administrative issue]
-
-2. THE 4CS FRAMEWORK FOR AI SPRINT SOLUTIONS
---------------------------------------------------
-- CONTEXT: What is the operational or administrative environment?
-- CHALLENGE: What specific delay, manual error, or cognitive load exists?
-- CORE IMPACT: How many human hours per week are lost?
-- CAPABILITY REQUIRED: What specific AI skill or vibe-code tool bridges the gap?
-
-HUMAN OVERSIGHT CHECK:
-[ ] Does this solution keep a human officer in the decision loop?
-[ ] How are AI outputs verified for accuracy and compliance?
-[ ] What strategic public service initiative will reclaimed time be allocated to?`
   },
   {
     id: 'res-12-sharepoint-browse',

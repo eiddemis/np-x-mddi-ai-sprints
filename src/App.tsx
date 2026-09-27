@@ -3,7 +3,6 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Agenda } from './components/Agenda';
 import { Resources } from './components/Resources';
-import { CtaBanner } from './components/CtaBanner';
 import { AgendaModal } from './components/AgendaModal';
 import { ResourceModal } from './components/ResourceModal';
 import { AgendaItem, ResourceItem } from './types';
@@ -25,10 +24,6 @@ export default function App() {
             <Hero
               onNavigateToResources={() => setActivePage('resources')}
               onNavigateToAgenda={() => setActivePage('agenda')}
-            />
-            <CtaBanner
-              onNavigateToAgenda={() => setActivePage('agenda')}
-              onNavigateToResources={() => setActivePage('resources')}
             />
           </>
         ) : activePage === 'agenda' ? (
