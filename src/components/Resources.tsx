@@ -102,38 +102,6 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
 
         </div>
 
-        {/* Section Jump Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8">
-          <button
-            onClick={() => { setSelectedSession('enterprise-ai'); setSearchQuery(''); }}
-            className={`group flex flex-col items-start gap-2 p-4 rounded-2xl border transition-all cursor-pointer text-left ${
-              selectedSession === 'enterprise-ai'
-                ? 'bg-[#1b345d] border-[#64FFDA]/60 shadow-lg shadow-[#64FFDA]/10'
-                : 'bg-[#112240] border-[#64FFDA]/20 hover:bg-[#1b345d] hover:border-[#64FFDA]/50'
-            }`}
-          >
-            <div className="flex items-center gap-2">
-              <Cpu className="w-4 h-4 text-[#64FFDA]" />
-              <span className="text-xs font-black uppercase tracking-wider text-[#64FFDA]">Enterprise AI</span>
-            </div>
-            <p className="text-[11px] text-[#8892B0] group-hover:text-[#CCD6F6] transition-colors">Apps · Skills</p>
-          </button>
-          <button
-            onClick={() => { setSelectedSession('vibe-coding'); setSearchQuery(''); }}
-            className={`group flex flex-col items-start gap-2 p-4 rounded-2xl border transition-all cursor-pointer text-left ${
-              selectedSession === 'vibe-coding'
-                ? 'bg-[#1b345d] border-[#64FFDA]/60 shadow-lg shadow-[#64FFDA]/10'
-                : 'bg-[#112240] border-[#64FFDA]/20 hover:bg-[#1b345d] hover:border-[#64FFDA]/50'
-            }`}
-          >
-            <div className="flex items-center gap-2">
-              <Code2 className="w-4 h-4 text-[#64FFDA]" />
-              <span className="text-xs font-black uppercase tracking-wider text-[#64FFDA]">Vibe Coding</span>
-            </div>
-            <p className="text-[11px] text-[#8892B0] group-hover:text-[#CCD6F6] transition-colors">TechScan Dashboard · PolicyAssist</p>
-          </button>
-        </div>
-
         {/* Session Filter Tabs + Search */}
         <div className="space-y-4 mb-10">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
@@ -181,6 +149,29 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
               )}
             </div>
           </div>
+
+          {/* Sub-section jump anchors — shown when a grouped session is active */}
+          {groupedView && (
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-[10px] text-[#8892B0] uppercase tracking-wider font-semibold mr-1">Jump to:</span>
+              {groupedView.map(({ group, items }) => (
+                <button
+                  key={group}
+                  onClick={() => {
+                    const el = document.getElementById(`subsection-${group.toLowerCase().replace(/\s+/g, '-')}`);
+                    if (el) {
+                      const top = el.getBoundingClientRect().top + window.scrollY - 80;
+                      window.scrollTo({ top, behavior: 'smooth' });
+                    }
+                  }}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#112240] border border-[#64FFDA]/25 hover:border-[#64FFDA]/60 hover:bg-[#1b345d] transition-all cursor-pointer"
+                >
+                  <span className="text-xs font-bold text-[#64FFDA] uppercase tracking-wider">{group}</span>
+                  <span className="text-[10px] font-mono text-[#8892B0]">{items.length}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Resource List */}
@@ -188,7 +179,7 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
           // Grouped view with sub-section dividers
           <div className="space-y-12">
             {groupedView.map(({ group, items }) => (
-              <div key={group}>
+              <div key={group} id={`subsection-${group.toLowerCase().replace(/\s+/g, '-')}`}>
                 {/* Sub-group header */}
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-px flex-1 bg-[#64FFDA]/15" />
