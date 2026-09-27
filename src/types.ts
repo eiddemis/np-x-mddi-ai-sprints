@@ -31,6 +31,7 @@ export interface ResourceItem {
   session?: 'problem-framing' | 'enterprise-ai' | 'vibe-coding';
   subGroup?: string;
   appSection?: string;
+  displayId?: string;
   type?: 'spreadsheet' | 'prompt' | 'document' | 'email' | 'code';
   tsvContent?: string;
   csvContent?: string;

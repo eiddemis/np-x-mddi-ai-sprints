@@ -205,9 +205,9 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
           </div>
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-1.5">
-              {resource.fileNumber && (
+              {(resource.displayId || resource.fileNumber) && (
                 <span className="text-xs font-black text-[#0A192F] bg-[#64FFDA] px-2.5 py-0.5 rounded shadow-sm uppercase tracking-wider">
-                  FILE {resource.fileNumber}
+                  FILE {resource.displayId || resource.fileNumber}
                 </span>
               )}
               <span className="text-[11px] font-bold text-[#64FFDA] bg-[#020C1B] px-2.5 py-0.5 rounded border border-[#64FFDA]/40 uppercase tracking-wider">
@@ -255,62 +255,52 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
             )}
           </button>
 
-          {/* Secondary Action Button */}
-          <button
-            onClick={handleSecondaryCopy}
-            className={`inline-flex items-center justify-center gap-2 px-3.5 py-3 rounded-xl border font-semibold text-xs transition-all cursor-pointer ${
-              copiedId === secondaryCopyId
-                ? 'bg-[#64FFDA] text-[#0A192F] border-[#64FFDA]'
-                : 'bg-[#0A192F] hover:bg-[#1d3557] border-[#64FFDA]/30 text-[#CCD6F6]'
-            }`}
-            title={isSpreadsheet ? 'Copy raw comma-separated CSV' : 'Copy standard text'}
-          >
-            {copiedId === secondaryCopyId ? (
-              <>
-                <Check className="w-3.5 h-3.5 text-[#0A192F]" />
-                <span>{isSpreadsheet ? 'Copied CSV!' : 'Copied!'}</span>
-              </>
-            ) : (
-              <>
-                {isSpreadsheet ? (
+          {/* Secondary Action Button — spreadsheets only */}
+          {isSpreadsheet && (
+            <button
+              onClick={handleSecondaryCopy}
+              className={`inline-flex items-center justify-center gap-2 px-3.5 py-3 rounded-xl border font-semibold text-xs transition-all cursor-pointer ${
+                copiedId === secondaryCopyId
+                  ? 'bg-[#64FFDA] text-[#0A192F] border-[#64FFDA]'
+                  : 'bg-[#0A192F] hover:bg-[#1d3557] border-[#64FFDA]/30 text-[#CCD6F6]'
+              }`}
+              title="Copy raw comma-separated CSV"
+            >
+              {copiedId === secondaryCopyId ? (
+                <>
+                  <Check className="w-3.5 h-3.5 text-[#0A192F]" />
+                  <span>Copied CSV!</span>
+                </>
+              ) : (
+                <>
                   <Table className="w-3.5 h-3.5 text-[#64FFDA]" />
-                ) : (
-                  <Copy className="w-3.5 h-3.5 text-[#64FFDA]" />
-                )}
-                <span>{isSpreadsheet ? 'Copy as CSV' : 'Copy as Raw'}</span>
-              </>
-            )}
-          </button>
+                  <span>Copy as CSV</span>
+                </>
+              )}
+            </button>
+          )}
 
-          {/* View Toggle Tabs */}
-          <div className="flex rounded-xl bg-[#0A192F] p-1 border border-[#64FFDA]/20">
-            <button
-              onClick={() => {
-                setViewMode('primary');
-                setIsCollapsed(false);
-              }}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
-                viewMode === 'primary' && !isCollapsed
-                  ? 'bg-[#112240] text-[#64FFDA]'
-                  : 'text-[#8892B0] hover:text-[#CCD6F6]'
-              }`}
-            >
-              {isSpreadsheet ? 'Table Grid' : 'Formatted View'}
-            </button>
-            <button
-              onClick={() => {
-                setViewMode('secondary');
-                setIsCollapsed(false);
-              }}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
-                viewMode === 'secondary' && !isCollapsed
-                  ? 'bg-[#112240] text-[#64FFDA]'
-                  : 'text-[#8892B0] hover:text-[#CCD6F6]'
-              }`}
-            >
-              {isSpreadsheet ? 'Raw CSV' : 'Raw Text'}
-            </button>
-          </div>
+          {/* View Toggle Tabs — spreadsheets only */}
+          {isSpreadsheet && (
+            <div className="flex rounded-xl bg-[#0A192F] p-1 border border-[#64FFDA]/20">
+              <button
+                onClick={() => { setViewMode('primary'); setIsCollapsed(false); }}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
+                  viewMode === 'primary' && !isCollapsed ? 'bg-[#112240] text-[#64FFDA]' : 'text-[#8892B0] hover:text-[#CCD6F6]'
+                }`}
+              >
+                Table Grid
+              </button>
+              <button
+                onClick={() => { setViewMode('secondary'); setIsCollapsed(false); }}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
+                  viewMode === 'secondary' && !isCollapsed ? 'bg-[#112240] text-[#64FFDA]' : 'text-[#8892B0] hover:text-[#CCD6F6]'
+                }`}
+              >
+                Raw CSV
+              </button>
+            </div>
+          )}
 
           {/* Optional Accordion Toggle */}
           <button
@@ -439,14 +429,10 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
               </div>
             )
           ) : (
-            /* Prompts & Documents */
-            viewMode === 'primary' ? (
-              renderFormattedContent(resource.downloadContent || '')
-            ) : (
-              <pre className="p-4 bg-[#0A192F] rounded-xl border border-[#64FFDA]/20 text-xs text-[#64FFDA] font-mono overflow-x-auto whitespace-pre-wrap leading-relaxed max-h-80 shadow-inner">
-                {resource.downloadContent}
-              </pre>
-            )
+            /* Prompts & Documents — always raw text */
+            <pre className="p-4 bg-[#0A192F] rounded-xl border border-[#64FFDA]/20 text-xs text-[#64FFDA] font-mono overflow-x-auto whitespace-pre-wrap leading-relaxed max-h-80 shadow-inner">
+              {resource.downloadContent}
+            </pre>
           )}
 
           {/* Footer Helper Note & Fullscreen Trigger */}

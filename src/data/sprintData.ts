@@ -133,9 +133,28 @@ export const AGENDA_ITEMS: AgendaItem[] = [
 
 export const RESOURCES: ResourceItem[] = [
   {
+    id: 'res-s1-attach-file',
+    fileNumber: '00',
+    displayId: 'S1',
+    title: 'S1 — SharePoint: Attach Project Portfolio File',
+    format: 'AI Prompt Template',
+    fileSize: 'Text Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    session: 'enterprise-ai',
+    subGroup: 'Skills',
+    type: 'prompt',
+    description: 'First step before running analysis prompts: connect the SharePoint app in ChatGPT Enterprise and attach the project portfolio Excel file from the course_files folder to the chat session.',
+    filename: 's1-attach-project-portfolio.txt',
+    tags: ['SharePoint', 'Attach File', 'Project Portfolio', 'Enterprise AI', 'Setup'],
+    usageTip: 'Setup Tip: Click "+" to add the SharePoint app in ChatGPT Enterprise, then send this prompt to pull in the project data before running the analysis and chart prompts.',
+    downloadContent: `Attach project_portfolio_updates.xlsx or an excel file of similar name in the course_files folder to this chat.`
+  },
+  {
     id: 'res-01-portfolio-csv',
     fileNumber: '01',
-    title: '01 — Project Portfolio Health Status (CSV / Excel)',
+    displayId: 'S2',
+    title: 'S2 — Project Portfolio Health Status (CSV / Excel)',
     format: 'CSV / Excel Dataset',
     fileSize: '8 Projects × 7 Columns',
     icon: 'FileSpreadsheet',
@@ -189,7 +208,8 @@ Project Hotel – Security Enhancement,Cybersecurity,85%,On Track,Minor testing 
   {
     id: 'res-02-mgmt-briefing',
     fileNumber: '02',
-    title: '02 — Monthly Management Briefing Analysis Prompt',
+    displayId: 'S3',
+    title: 'S3 — Monthly Management Briefing Analysis Prompt',
     format: 'AI Prompt Template',
     fileSize: 'Text Prompt',
     icon: 'Terminal',
@@ -217,7 +237,8 @@ Base your analysis only on the uploaded data.`
   {
     id: 'res-03-daily-brief',
     fileNumber: '03',
-    title: '03 — Executive Daily Briefing Assistant Prompt',
+    displayId: 'A4',
+    title: 'A4 — Executive Daily Briefing Assistant Prompt',
     format: 'AI Prompt Template',
     fileSize: 'Text Prompt',
     icon: 'Terminal',
@@ -626,7 +647,8 @@ CONSTRAINTS: "Never fabricate data. Mark uncertain items with [NEEDS HUMAN REVIE
   {
     id: 'res-12-sharepoint-browse',
     fileNumber: '12',
-    title: '12 — SharePoint: Browse Policy Documents',
+    displayId: 'A1',
+    title: 'A1 — SharePoint: Browse Policy Documents',
     format: 'AI Prompt Template',
     fileSize: 'Text Prompt',
     icon: 'Terminal',
@@ -644,7 +666,8 @@ CONSTRAINTS: "Never fabricate data. Mark uncertain items with [NEEDS HUMAN REVIE
   {
     id: 'res-13-sharepoint-summary',
     fileNumber: '13',
-    title: '13 — SharePoint: Summarise Policy Rules Table',
+    displayId: 'A2',
+    title: 'A2 — SharePoint: Summarise Policy Rules Table',
     format: 'AI Prompt Template',
     fileSize: 'Text Prompt',
     icon: 'Terminal',
@@ -661,7 +684,8 @@ CONSTRAINTS: "Never fabricate data. Mark uncertain items with [NEEDS HUMAN REVIE
   },
   {
     id: 'res-sp-policyassist-q1',
-    title: 'SharePoint: PolicyAssist Test Query 1 — Travel & Hotel Ceilings',
+    displayId: 'A3',
+    title: 'A3 — SharePoint: PolicyAssist Test Query 1 — Travel & Hotel Ceilings',
     format: 'AI Prompt Template',
     fileSize: 'Text Prompt',
     icon: 'Terminal',
@@ -677,34 +701,10 @@ CONSTRAINTS: "Never fabricate data. Mark uncertain items with [NEEDS HUMAN REVIE
     downloadContent: `I am traveling to London for a conference. What is my hotel ceiling per night, and can I book Business Class if I am Grade 7?`
   },
   {
-    id: 'res-14-weekly-report',
-    fileNumber: '14',
-    title: '14 — Weekly Management Report Prompt',
-    format: 'AI Prompt Template',
-    fileSize: 'Text Prompt',
-    icon: 'Terminal',
-    category: 'prompts',
-    session: 'enterprise-ai',
-    subGroup: 'Skills',
-    type: 'prompt',
-    description: 'Structured prompt for drafting a weekly management report from team project updates. Uses role, task, context and format framing to produce executive-ready summaries with clear action items.',
-    filename: '14_Weekly_Management_Report_Prompt.txt',
-    tags: ['File 14', 'AI Prompt', 'Management Report', 'Weekly Update', 'Enterprise AI'],
-    usageTip: 'Report Tip: Upload or paste your team\'s weekly project updates first, then send this prompt. Works with SharePoint-connected files or pasted text.',
-    downloadContent: `You are a project officer preparing the recurring management report from updates you receive from several project teams.
-Draft the weekly management report in a clear professional tone using simple English with the attached updates.
-Summarise progress, blockers, decision points and any deadlines that need attention.
-Format:
-1. Executive Summary
-2. Key Progress
-3. Risks and Blockers
-4. Decisions Needed
-5. Next Actions`
-  },
-  {
     id: 'res-15-chart-prompt',
     fileNumber: '15',
-    title: '15 — Project Status Chart Creation Prompt',
+    displayId: 'S4',
+    title: 'S4 — Project Status Chart Creation Prompt',
     format: 'AI Prompt Template',
     fileSize: 'Text Prompt',
     icon: 'Terminal',
@@ -721,7 +721,8 @@ Format:
   {
     id: 'res-16-full-briefing',
     fileNumber: '16',
-    title: '16 — Full One-Page Management Briefing (.docx)',
+    displayId: 'S5',
+    title: 'S5 — Full One-Page Management Briefing (.docx)',
     format: 'AI Prompt Template',
     fileSize: 'Text Prompt',
     icon: 'Terminal',
@@ -738,7 +739,8 @@ Format:
   {
     id: 'res-17-package-skill',
     fileNumber: '17',
-    title: '17 — Package Analysis Workflow as a Skill',
+    displayId: 'S6',
+    title: 'S6 — Package Analysis Workflow as a Skill',
     format: 'AI Prompt Template',
     fileSize: 'Text Prompt',
     icon: 'Terminal',

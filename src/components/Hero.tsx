@@ -63,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateToResources }) => {
           </div>
 
           {/* Action CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mb-0">
             <a
               href="#agenda"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-immersive-btn text-[#0A192F] font-bold text-sm shadow-xl shadow-[#64FFDA]/20 transition-all cursor-pointer transform hover:-translate-y-0.5"
@@ -80,25 +80,6 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateToResources }) => {
             </button>
           </div>
 
-          {/* Quick Stats Bar */}
-          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-[#112240]">
-            <div className="p-4 rounded-xl bg-[#112240] border border-[#64FFDA]/15 border-immersive-accent">
-              <div className="text-2xl sm:text-3xl font-bold text-[#64FFDA]">1 Day</div>
-              <div className="text-xs text-[#8892B0] mt-1 font-medium">Intensive Build Sprint</div>
-            </div>
-            <div className="p-4 rounded-xl bg-[#112240] border border-[#64FFDA]/15 border-immersive-accent">
-              <div className="text-2xl sm:text-3xl font-bold text-[#64FFDA]">5 Whys & 4Cs</div>
-              <div className="text-xs text-[#8892B0] mt-1 font-medium">Problem Framing</div>
-            </div>
-            <div className="p-4 rounded-xl bg-[#112240] border border-[#64FFDA]/15 border-immersive-accent">
-              <div className="text-2xl sm:text-3xl font-bold text-[#64FFDA]">100%</div>
-              <div className="text-xs text-[#8892B0] mt-1 font-medium">Human Oversight & ROI</div>
-            </div>
-            <div className="p-4 rounded-xl bg-[#112240] border border-[#64FFDA]/15 border-immersive-accent">
-              <div className="text-2xl sm:text-3xl font-bold text-[#64FFDA]">Zero</div>
-              <div className="text-xs text-[#8892B0] mt-1 font-medium">Prior Coding Required</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
