@@ -394,13 +394,14 @@ Customer Service Portal Enhancement`
   {
     id: 'res-06-techscan-vibe',
     fileNumber: '06',
-    title: '06 — TechScan Dashboard Vibe-Coding Prompt & Spec',
+    displayId: 'T1',
+    title: 'T1 — TechScan Dashboard Vibe-Coding Prompt & Spec',
     format: 'Vibe-Coding Spec + CSV',
     fileSize: 'Vibe-Coding Prompt',
     icon: 'Terminal',
     category: 'prompts',
     session: 'vibe-coding',
-    subGroup: 'Demo 1: TechScan',
+    subGroup: 'TechScan Dashboard',
     type: 'prompt',
     description: 'Full instruction prompt to build a clean emerging tech dashboard with dark navy sidebar, color-coded threshold KPIs, domain bar charts, and key finding highlights.',
     filename: '06_TechScan_Dashboard_Build_Prompt.txt',
@@ -430,13 +431,14 @@ TS-10,Advanced Materials,Self-Healing Polymers,3,3,5,1,3,3,Repeatable Cycle Fati
   {
     id: 'res-07-csv-techscan',
     fileNumber: '07',
-    title: '07 — TechScan Comprehensive Multi-Metric Dataset (CSV)',
+    displayId: 'T2',
+    title: 'T2 — TechScan Comprehensive Multi-Metric Dataset (CSV)',
     format: 'CSV Dataset',
     fileSize: '10 Rows × 10 Columns',
     icon: 'FileSpreadsheet',
     category: 'data',
     session: 'vibe-coding',
-    subGroup: 'Demo 1: TechScan',
+    subGroup: 'TechScan Dashboard',
     type: 'spreadsheet',
     description: 'Multi-metric technology dataset with TRL ratings, Security, Integration, Vendor Maturity, and Strategic Value scores for emerging tech dashboard exercises.',
     filename: '07_TechScan_MultiMetric_Data.csv',
@@ -490,76 +492,23 @@ TS-09,Sensors & Optics,Photonic SAR Imaging,4,4,2,2,5,3.25,Optical Component Ali
 TS-10,Advanced Materials,Self-Healing Polymers,3,3,5,1,3,3,Repeatable Cycle Fatigue`
   },
   {
-    id: 'res-08-tech-impact-csv',
-    fileNumber: '08',
-    title: '08 — Emerging Tech Impact & Risk Dataset (CSV)',
-    format: 'CSV / Excel Dataset',
-    fileSize: '8 Rows × 4 Columns',
-    icon: 'FileSpreadsheet',
-    category: 'data',
-    session: 'vibe-coding',
-    subGroup: 'Demo 1: TechScan',
-    type: 'spreadsheet',
-    description: 'Course exercise spreadsheet evaluating emerging technologies across autonomous systems, cyber, sensors, and materials, with impact ratings and primary risk profiles.',
-    filename: '08_Emerging_Tech_Impact_Data.csv',
-    tags: ['File 08', 'Excel File', 'CSV Dataset', 'Copy for Excel', 'Tech Assessment'],
-    usageTip: 'Technology Matrix Tip: 4-column tech impact and risk dataset. Click "Copy for Excel" to load directly into Excel or your analysis tools.',
-    tableHeaders: ['Domain', 'Technology_Name', 'Overall_Impact', 'Primary_Risk'],
-    tableRows: [
-      { Domain: 'Autonomous Systems', Technology_Name: 'Drone Swarm Logic', Overall_Impact: 2.8, Primary_Risk: 'Supply chain disruption' },
-      { Domain: 'Autonomous Systems', Technology_Name: 'Unmanned Ground Vehicles', Overall_Impact: 3.1, Primary_Risk: 'Battery limitations' },
-      { Domain: 'Cyber & Comms', Technology_Name: 'Quantum Decryption', Overall_Impact: 1.5, Primary_Risk: 'Critical vulnerability' },
-      { Domain: 'Cyber & Comms', Technology_Name: 'Zero-Trust Architecture', Overall_Impact: 4.1, Primary_Risk: 'Implementation cost' },
-      { Domain: 'Sensors & Optics', Technology_Name: 'Next-Gen Lidar', Overall_Impact: 3.4, Primary_Risk: 'Weather interference' },
-      { Domain: 'Sensors & Optics', Technology_Name: 'Acoustic Triangulation', Overall_Impact: 2.5, Primary_Risk: 'High false positive rate' },
-      { Domain: 'Materials', Technology_Name: 'Graphene Plating', Overall_Impact: 3.2, Primary_Risk: 'Manufacturing scale' },
-      { Domain: 'Materials', Technology_Name: 'Smart Textiles', Overall_Impact: 2.9, Primary_Risk: 'Durability issues' }
-    ],
-    tsvContent: `Domain\tTechnology_Name\tOverall_Impact\tPrimary_Risk
-Autonomous Systems\tDrone Swarm Logic\t2.8\tSupply chain disruption
-Autonomous Systems\tUnmanned Ground Vehicles\t3.1\tBattery limitations
-Cyber & Comms\tQuantum Decryption\t1.5\tCritical vulnerability
-Cyber & Comms\tZero-Trust Architecture\t4.1\tImplementation cost
-Sensors & Optics\tNext-Gen Lidar\t3.4\tWeather interference
-Sensors & Optics\tAcoustic Triangulation\t2.5\tHigh false positive rate
-Materials\tGraphene Plating\t3.2\tManufacturing scale
-Materials\tSmart Textiles\t2.9\tDurability issues`,
-    csvContent: `Domain,Technology_Name,Overall_Impact,Primary_Risk
-Autonomous Systems,Drone Swarm Logic,2.8,Supply chain disruption
-Autonomous Systems,Unmanned Ground Vehicles,3.1,Battery limitations
-Cyber & Comms,Quantum Decryption,1.5,Critical vulnerability
-Cyber & Comms,Zero-Trust Architecture,4.1,Implementation cost
-Sensors & Optics,Next-Gen Lidar,3.4,Weather interference
-Sensors & Optics,Acoustic Triangulation,2.5,High false positive rate
-Materials,Graphene Plating,3.2,Manufacturing scale
-Materials,Smart Textiles,2.9,Durability issues`,
-    downloadContent: `Domain,Technology_Name,Overall_Impact,Primary_Risk
-Autonomous Systems,Drone Swarm Logic,2.8,Supply chain disruption
-Autonomous Systems,Unmanned Ground Vehicles,3.1,Battery limitations
-Cyber & Comms,Quantum Decryption,1.5,Critical vulnerability
-Cyber & Comms,Zero-Trust Architecture,4.1,Implementation cost
-Sensors & Optics,Next-Gen Lidar,3.4,Weather interference
-Sensors & Optics,Acoustic Triangulation,2.5,High false positive rate
-Materials,Graphene Plating,3.2,Manufacturing scale
-Materials,Smart Textiles,2.9,Durability issues`
-  },
-  {
     id: 'res-09-policy-assist',
     fileNumber: '09',
-    title: '09 — PolicyAssist Claims & Policy Checker Bot Specification',
+    displayId: 'P1',
+    title: 'P1 — PolicyAssist Bot Specification',
     format: 'AI Assistant Prompt',
     fileSize: 'Specification Prompt',
     icon: 'Terminal',
     category: 'prompts',
     session: 'vibe-coding',
-    subGroup: 'Demo 2: PolicyAssist',
+    subGroup: 'PolicyAssist',
     type: 'prompt',
-    description: 'Vibe-coding prompt to create a chatbot for public sector officers answering queries on overseas travel allowances, SaaS procurement, overtime taxi claims, and TOIL rules with citations.',
+    description: 'Vibe-coding prompt to create a chatbot for public sector officers answering queries on overseas travel allowances, SaaS procurement, overtime taxi claims, and TOIL rules — with three full policy documents embedded.',
     filename: '09_PolicyAssist_Bot_Specification_Prompt.txt',
     tags: ['File 09', 'PolicyAssist', 'Bot Prompt', 'Corporate Claims', 'Human Oversight'],
-    usageTip: 'Bot Specification Tip: Full architecture & scope requirements for building the PolicyAssist internal allowance and claims checker assistant.',
+    usageTip: 'Bot Specification Tip: Full architecture & scope requirements for building the PolicyAssist internal allowance and claims checker assistant. Policy documents are embedded — paste the entire prompt directly into Google AI Studio.',
     downloadContent: `Create an AI-powered Claims & Policy Checker Bot for public sector officers called PolicyAssist.
-The application should allow officers to ask questions about corporate policy, travel allowances, tech procurement, and transport/overtime claims, receiving answers strictly based on policy documents in this folder: https://go.gov.sg/aispolicy.
+The application should allow officers to ask questions about corporate policy, travel allowances, tech procurement, and transport/overtime claims, receiving answers strictly based on policy documents below.
 Provide a simple chat interface with suggested quick questions covering:
 • Overseas Travel Allowances & Accommodation Ceilings
 • Software & SaaS Procurement Vetting Rules
@@ -569,7 +518,95 @@ For each answer, show:
 • The clear policy response
 • The source document reference (e.g., POL-FIN-2024-04)
 • A confidence level
-If the assistant cannot find an answer in the documents, it should advise the officer to contact the Finance & Procurement helpdesk. Include an admin panel where policy administrators can upload and manage policy documents.`
+If the assistant cannot find an answer in the documents, it should advise the officer to contact the Finance & Procurement helpdesk. Include an admin panel where policy administrators can upload and manage policy documents.
+
+===
+
+DEFENCETECH AGENCY POLICY DIRECTIVE: TRAVEL & OVERSEAS DISBURSEMENTS
+Document Reference: DTA-FIN-POL-2024-04 | Classification: UNCLASSIFIED (SIMULATION DATASET)
+
+1. PURPOSE & SCOPE
+This policy establishes standard operating procedures for official overseas travel, allowable expense thresholds, per diem disbursements, and mandatory claim reconciliation timelines for all appointed staff and project officers within DefenceTech Agency.
+
+2. AIR TRAVEL & CLASS OF ACCOMMODATION
+2.1 Flight Entitlements:
+- Grade 7 and below: Standard Economy Class for all flight sectors.
+- Grade 8 and above: Business Class is permitted strictly for non-stop flight durations exceeding six (6) continuous hours. If a transit route is selected, Business Class applies only to individual flight legs exceeding six hours.
+2.2 Flight Bookings:
+All itineraries must be booked via the appointed Corporate Travel Agent (CTA) at least fourteen (14) calendar days prior to departure. Lowest logical airfare rules apply.
+
+3. PER DIEM & SUBSISTENCE ALLOWANCES
+3.1 Daily Allowance Structure:
+- Southeast Asia (Tier 1): SGD 120 per full calendar day.
+- Asia-Pacific & Middle East (Tier 2): SGD 150 per full calendar day.
+- Europe, North America & Oceania (Tier 3): SGD 180 per full calendar day.
+3.2 Per diem covers meals, local transport within the host city, and incidental personal expenses. No individual receipts are required for per diem disbursements.
+3.3 Partial Days: Travel days involving departure after 12:00 PM or return before 12:00 PM will be reimbursed at 50% of the daily per diem rate.
+
+4. ACCOMMODATION THRESHOLDS & EXCEPTIONS
+4.1 The standard hotel accommodation ceiling is SGD 250 nett per room per night for Tier 1 and SGD 350 nett per night for Tiers 2 and 3.
+4.2 Exceptions: If conference-designated hotels or peak-season rates exceed the ceiling, an advance Exception Waiver must be endorsed by the relevant Division Director prior to travel confirmation.
+
+5. CLAIMS SETTLEMENT & AUDIT REQUIREMENTS
+5.1 All travel expense reconciliation and per diem claims must be submitted via the Enterprise Claims System within fourteen (14) calendar days of return.
+5.2 Late submissions exceeding thirty (30) calendar days will require formal written justification endorsed by the Directorate Head and may be subject to non-reimbursement.
+
+DEFENCETECH AGENCY PROCUREMENT MANUAL: TECHNOLOGY & SOFTWARE ACQUISITION
+Document Reference: DTA-PROC-TECH-2025-01 | Classification: UNCLASSIFIED (SIMULATION DATASET)
+
+1. OBJECTIVE
+To govern the acquisition of digital tools, enterprise software, developer utilities, and specialized laboratory equipment, ensuring compliance with governance, cybersecurity vetting, and budgetary frameworks.
+
+2. FINANCIAL APPROVAL THRESHOLDS & QUOTATION GOVERNANCE
+2.1 Tier 1 (Up to SGD 5,000):
+- Approval Authority: Section Head / Programme Lead.
+- Quotation Requirement: Single written quotation from an authorized supplier. Direct purchase via corporate petty cash or designated purchase card allowed.
+2.2 Tier 2 (SGD 5,001 to SGD 50,000):
+- Approval Authority: Division Director.
+- Quotation Requirement: Minimum of three (3) competitive formal quotations, or a Sole Source Justification Form approved by the Central Procurement Office (CPO).
+2.3 Tier 3 (SGD 50,001 to SGD 200,000):
+- Approval Authority: Directorate Head.
+- Quotation Requirement: Competitive procurement via standard public period contract tenders.
+
+3. SOFTWARE-AS-A-SERVICE (SAAS) & CLOUD UTILITIES
+3.1 Personal Corporate Card Prohibition:
+Staff are strictly prohibited from purchasing recurring SaaS software subscriptions using personal credit cards or unmonitored expense reimbursements.
+3.2 Security Preliminary Clearance:
+All off-the-shelf software tools, AI platforms, IDE plugins, or collaboration platforms must obtain a Security Clearance Certificate from the InfoSec Audit Team before contract signing or payment.
+3.3 Cloud Data Residency:
+Tools that ingest, store, or process project data must maintain cloud data residency within Singapore or comply with approved sovereign hosting exemptions.
+
+4. HARDWARE RECEIPT & ASSET TAGGING
+4.1 Any compute device, edge sensor, or peripheral with an individual value exceeding SGD 500 must be routed to the IT Asset Operations Helpdesk for physical tagging, inventory registration, and baseline security hardening prior to operational deployment.
+4.2 Disposal or cannibalization of registered tech hardware must be logged through the Asset Write-Off Committee.
+
+DEFENCETECH AGENCY OPERATIONAL INSTRUCTION: OVERTIME, MEAL & TRANSPORT CLAIMS
+Document Reference: DTA-HR-OPS-2024-08 | Classification: UNCLASSIFIED (SIMULATION DATASET)
+
+1. SCOPE & ELIGIBILITY
+This operational guideline outlines eligibility criteria, submission workflows, and maximum claimable limits for official overtime work, extended shift transport, and meal stipends.
+
+2. MEAL ALLOWANCES FOR EXTENDED DUTY
+2.1 Standard Workdays:
+Officers who are formally instructed to perform continuous official work beyond 8:00 PM on a scheduled working day are eligible for a fixed meal stipend of SGD 20.00 nett.
+2.2 Eligibility Conditions:
+The continuous overtime session must be a minimum of two (2) hours beyond standard operational hours. Meal allowances cannot be claimed if catering or duty meals are provided on-site.
+
+3. AFTER-HOURS TRANSPORTATION CLAIMS
+3.1 Late Night Departure:
+Officers departing the office or operational site at or after 9:00 PM following authorized duty are entitled to 100% reimbursement of point-to-point taxi or approved ride-hailing fares directly to their residential address.
+3.2 Early Morning Arrival:
+Transport claims for journeys from residence to workplace are valid if official duty demands arrival on-site prior to 6:30 AM.
+3.3 Electronic Receipts:
+Itemized electronic receipts displaying pickup timestamp, route details, and fare breakdown must be attached to the claim submission. Booking fees and peak-hour surcharges are claimable; surge pricing exceeding SGD 60 requires supervisor verification.
+
+4. WEEKEND & PUBLIC HOLIDAY DUTY (TIME-OFF-IN-LIEU)
+4.1 Non-Monetary Compensation:
+Weekend operational duty is recognized via Time-Off-In-Lieu (TOIL) rather than monetary overtime disbursements.
+4.2 TOIL Accrual Formula:
+- Four (4) to eight (8) continuous duty hours: 0.5 Day TOIL credited.
+- Exceeding eight (8) continuous duty hours: 1.0 Day TOIL credited.
+4.3 Expiry: TOIL credits must be consumed within three (3) calendar months from the date of accrual. Unutilized TOIL will lapse automatically.`
   },
   {
     id: 'res-10-whys-framing',
@@ -607,42 +644,6 @@ HUMAN OVERSIGHT CHECK:
 [ ] Does this solution keep a human officer in the decision loop?
 [ ] How are AI outputs verified for accuracy and compliance?
 [ ] What strategic public service initiative will reclaimed time be allocated to?`
-  },
-  {
-    id: 'res-11-prompt-cheatsheet',
-    fileNumber: '11',
-    title: '11 — Vibe-Coding & Prompting Reference Cheat Sheet',
-    format: 'Prompt Cheat Sheet',
-    fileSize: 'Guide & Code Recipes',
-    icon: 'Zap',
-    category: 'prompts',
-    session: 'vibe-coding',
-    subGroup: 'Reference',
-    type: 'prompt',
-    description: 'Reference guide for officers and engineers featuring system prompt anchor formulas, context-window optimization, error recovery formulas, and natural language layout instructions.',
-    filename: '11_VibeCoding_Prompting_CheatSheet.txt',
-    tags: ['File 11', 'Prompting', 'Vibe-Coding', 'Cheatsheet', 'Formulas'],
-    usageTip: 'Prompt Engineering Tip: Master the System Prompt Anchor Formula (Role, Context, Task, Constraints) and error recovery prompt patterns.',
-    downloadContent: `NP X MDDI AI SPRINTS - VIBE-CODING & PROMPTING CHEAT SHEET
-
-1. THE SYSTEM PROMPT ANCHOR FORMULA
---------------------------------------------------
-ROLE: "You are a senior public sector systems engineer assisting with..."
-CONTEXT: "We are processing weekly procurement logs where..."
-TASK: "Extract key deadlines, identify risk flags, and present in a clean table..."
-CONSTRAINTS: "Never fabricate data. Mark uncertain items with [NEEDS HUMAN REVIEW]."
-
-2. VIBE-CODING INTERACTION TIPS
---------------------------------------------------
-- Start small: Build visual structure first, then wire dynamic logic.
-- Specify design rules: "Use deep navy background #0A192F with electric cyan accents #06B6D4."
-- Request modular components: "Keep state clean and break cards into separate reusable files."
-- Always verify: Include human verification buttons for critical outputs.
-
-3. ENTERPRISE AI SAFETY CONSTRAINTS
---------------------------------------------------
-- Do NOT input restricted or sensitive data into public sandboxes.
-- Always validate numerical or regulatory compliance outputs against official sources.`
   },
   {
     id: 'res-12-sharepoint-browse',
@@ -759,13 +760,14 @@ The audience is senior management.`
   {
     id: 'res-18-techscan-filter',
     fileNumber: '18',
-    title: '18 — TechScan Step 5: Add Domain Filter Dropdown',
+    displayId: 'T3',
+    title: 'T3 — TechScan: Add Domain Filter Dropdown',
     format: 'Vibe-Coding Prompt',
     fileSize: 'Refinement Prompt',
     icon: 'Terminal',
     category: 'prompts',
     session: 'vibe-coding',
-    subGroup: 'Demo 1: TechScan',
+    subGroup: 'TechScan Dashboard',
     type: 'prompt',
     description: 'Google AI Studio refinement prompt (Demo 1, Step 5) to add an interactive domain filter dropdown to the TechScan dashboard. All charts and metrics update instantly when the filter changes.',
     filename: '18_TechScan_Step5_Add_Filter_Prompt.txt',
@@ -776,13 +778,14 @@ The audience is senior management.`
   {
     id: 'res-19-techscan-upload',
     fileNumber: '19',
-    title: '19 — TechScan Step 7: Add Upload CSV Feature',
+    displayId: 'T4',
+    title: 'T4 — TechScan: Add Upload CSV Feature',
     format: 'Vibe-Coding Prompt',
     fileSize: 'Refinement Prompt',
     icon: 'Terminal',
     category: 'prompts',
     session: 'vibe-coding',
-    subGroup: 'Demo 1: TechScan',
+    subGroup: 'TechScan Dashboard',
     type: 'prompt',
     description: 'Google AI Studio prompt (Demo 1, Step 7) to add a CSV data upload button to the TechScan dashboard. Officers can upload fresh technology data and the dashboard updates automatically — works offline.',
     filename: '19_TechScan_Step7_Add_Upload_Prompt.txt',
@@ -793,13 +796,14 @@ The audience is senior management.`
   {
     id: 'res-20-techscan-stresstest',
     fileNumber: '20',
-    title: '20 — TechScan Stress Test Dataset (CSV)',
+    displayId: 'T5',
+    title: 'T5 — TechScan Stress Test Dataset (CSV)',
     format: 'CSV Dataset',
     fileSize: '10 Rows × 10 Columns',
     icon: 'FileSpreadsheet',
     category: 'data',
     session: 'vibe-coding',
-    subGroup: 'Demo 1: TechScan',
+    subGroup: 'TechScan Dashboard',
     type: 'spreadsheet',
     description: 'Low-score technology dataset for stress-testing the TechScan dashboard. All scores fall below the 3.5 warning threshold — upload this via the dashboard\'s CSV upload button to watch all red/amber alerts activate.',
     filename: '20_TechScan_StressTest_Data.csv',
@@ -855,13 +859,14 @@ TS-10,Advanced Materials,Self-Healing Polymers,2,2,2,1,2,1.8,Repeatable Cycle Fa
   {
     id: 'res-21-techscan-barchart',
     fileNumber: '21',
-    title: '21 — TechScan Step 8: Add Tech Scores Bar Chart',
+    displayId: 'T6',
+    title: 'T6 — TechScan: Add Tech Scores Bar Chart',
     format: 'Vibe-Coding Prompt',
     fileSize: 'Refinement Prompt',
     icon: 'Terminal',
     category: 'prompts',
     session: 'vibe-coding',
-    subGroup: 'Demo 1: TechScan',
+    subGroup: 'TechScan Dashboard',
     type: 'prompt',
     description: 'Google AI Studio prompt (Demo 1, Step 8) to add a horizontal bar chart showing individual Overall Impact scores for every technology, sorted highest to lowest with a red-to-green colour scale.',
     filename: '21_TechScan_Step8_Add_BarChart_Prompt.txt',
@@ -872,13 +877,14 @@ TS-10,Advanced Materials,Self-Healing Polymers,2,2,2,1,2,1.8,Repeatable Cycle Fa
   {
     id: 'res-22-techscan-insights',
     fileNumber: '22',
-    title: '22 — TechScan Step 9: Add Key Insights Section',
+    displayId: 'T7',
+    title: 'T7 — TechScan: Add Key Insights Section',
     format: 'Vibe-Coding Prompt',
     fileSize: 'Refinement Prompt',
     icon: 'Terminal',
     category: 'prompts',
     session: 'vibe-coding',
-    subGroup: 'Demo 1: TechScan',
+    subGroup: 'TechScan Dashboard',
     type: 'prompt',
     description: 'Google AI Studio prompt (Demo 1, Step 9) to add an automated Key Insights panel highlighting the top 2 highest-scoring technologies (Top Opportunities) and the lowest-scoring technology (Critical Watchlist) with its primary risk.',
     filename: '22_TechScan_Step9_Add_Insights_Prompt.txt',
@@ -887,59 +893,130 @@ TS-10,Advanced Materials,Self-Healing Polymers,2,2,2,1,2,1.8,Repeatable Cycle Fa
     downloadContent: `Add a 'Key Insights' section at the bottom that automatically highlights the top 2 highest-scoring technologies (Top Opportunities) and the 1 lowest-scoring technology (Critical Watchlist) based on the Overall Impact scores. Include the Primary Risk for the lowest-scoring item.`
   },
   {
-    id: 'res-23-policyassist-queries',
-    fileNumber: '23',
-    title: '23 — PolicyAssist Test Queries (4 Sample Questions)',
-    format: 'Test Query Set',
-    fileSize: '4 Sample Queries',
+    id: 'res-25-policyassist-q2',
+    fileNumber: '25',
+    displayId: 'P2',
+    title: 'P2 — PolicyAssist Test Query — Travel & Hotel Ceilings',
+    format: 'AI Test Query',
+    fileSize: 'Test Prompt',
     icon: 'Terminal',
     category: 'prompts',
     session: 'vibe-coding',
-    subGroup: 'Demo 2: PolicyAssist',
+    subGroup: 'PolicyAssist',
     type: 'prompt',
-    description: 'Four realistic officer test queries to validate the PolicyAssist bot after setup — covering overseas hotel ceilings, software procurement rules, late-night taxi claims, and weekend overtime or TOIL entitlements.',
-    filename: '23_PolicyAssist_Test_Queries.txt',
-    tags: ['File 23', 'PolicyAssist', 'Test Queries', 'Vibe-Coding', 'Google AI Studio'],
-    usageTip: 'PolicyAssist Test Tip: After setting up the bot (File 09), test each query one at a time to validate that policy citations appear correctly.',
-    downloadContent: `POLICYASSIST TEST QUERIES
-
-Query 1 — Travel & Hotel Ceilings
-I am traveling to London for a conference. What is my hotel ceiling per night, and can I book Business Class if I am Grade 7?
-
-Query 2 — Software Procurement
-Can I buy a $3,000 developer software subscription using my personal corporate credit card?
-
-Query 3 — Late-Night Transport Claim
-I left the office at 9:30 PM after working late on project deployment. Am I eligible for a taxi claim home?
-
-Query 4 — Weekend Work & TOIL
-I worked 6 hours on Saturday for an urgent system patch. Will I receive overtime pay or Time-Off-In-Lieu?`
+    description: 'Sample officer query to test the PolicyAssist bot: overseas hotel ceiling per night and Business Class eligibility for Grade 7 officers traveling to London.',
+    filename: 'policyassist-query-2-travel.txt',
+    tags: ['PolicyAssist', 'Test Query', 'Travel', 'Hotel Ceiling', 'Vibe-Coding'],
+    usageTip: 'Test Query Tip: Paste into the PolicyAssist bot you built in Demo 2 to verify it returns the correct travel policy rules with source citations.',
+    downloadContent: `I am traveling to London for a conference. What is my hotel ceiling per night, and can I book Business Class if I am Grade 7?`
   },
   {
-    id: 'res-24-policyassist-extend',
-    fileNumber: '24',
-    title: '24 — PolicyAssist Extension Prompts (3 Enhancements)',
-    format: 'Vibe-Coding Prompts',
-    fileSize: '3 Extension Prompts',
+    id: 'res-26-policyassist-q3',
+    fileNumber: '26',
+    displayId: 'P3',
+    title: 'P3 — PolicyAssist Test Query — Software Procurement',
+    format: 'AI Test Query',
+    fileSize: 'Test Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    session: 'vibe-coding',
+    subGroup: 'PolicyAssist',
+    type: 'prompt',
+    description: 'Sample officer query to test the PolicyAssist bot: SaaS software subscription purchase rules and whether a personal corporate credit card can be used.',
+    filename: 'policyassist-query-3-software.txt',
+    tags: ['PolicyAssist', 'Test Query', 'Software Procurement', 'SaaS', 'Vibe-Coding'],
+    usageTip: 'Test Query Tip: Paste into the PolicyAssist bot to verify it correctly applies the SaaS procurement policy and card prohibition rules.',
+    downloadContent: `Can I buy a $3,000 developer software subscription using my personal corporate credit card?`
+  },
+  {
+    id: 'res-27-policyassist-q4',
+    fileNumber: '27',
+    displayId: 'P4',
+    title: 'P4 — PolicyAssist Test Query — Late-Night Transport Claim',
+    format: 'AI Test Query',
+    fileSize: 'Test Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    session: 'vibe-coding',
+    subGroup: 'PolicyAssist',
+    type: 'prompt',
+    description: 'Sample officer query to test the PolicyAssist bot: taxi claim eligibility after leaving the office at 9:30 PM following authorized project deployment work.',
+    filename: 'policyassist-query-4-transport.txt',
+    tags: ['PolicyAssist', 'Test Query', 'Transport Claim', 'Late Night', 'Vibe-Coding'],
+    usageTip: 'Test Query Tip: Paste into the PolicyAssist bot to verify it applies the after-hours transport claim rules correctly.',
+    downloadContent: `I left the office at 9:30 PM after working late on project deployment. Am I eligible for a taxi claim home?`
+  },
+  {
+    id: 'res-28-policyassist-q5',
+    fileNumber: '28',
+    displayId: 'P5',
+    title: 'P5 — PolicyAssist Test Query — Weekend Overtime & TOIL',
+    format: 'AI Test Query',
+    fileSize: 'Test Prompt',
+    icon: 'Terminal',
+    category: 'prompts',
+    session: 'vibe-coding',
+    subGroup: 'PolicyAssist',
+    type: 'prompt',
+    description: 'Sample officer query to test the PolicyAssist bot: whether 6 hours of Saturday work on an urgent system patch qualifies for overtime pay or Time-Off-In-Lieu.',
+    filename: 'policyassist-query-5-weekend.txt',
+    tags: ['PolicyAssist', 'Test Query', 'Weekend Duty', 'TOIL', 'Vibe-Coding'],
+    usageTip: 'Test Query Tip: Paste into the PolicyAssist bot to verify it applies the TOIL accrual formula and weekend duty rules correctly.',
+    downloadContent: `I worked 6 hours on Saturday for an urgent system patch. Will I receive overtime pay or Time-Off-In-Lieu?`
+  },
+  {
+    id: 'res-29-policyassist-ext1',
+    fileNumber: '29',
+    displayId: 'P6',
+    title: 'P6 — PolicyAssist Extension — Strict Grounding & Tone',
+    format: 'Vibe-Coding Prompt',
+    fileSize: 'Extension Prompt',
     icon: 'Zap',
     category: 'prompts',
     session: 'vibe-coding',
-    subGroup: 'Demo 2: PolicyAssist',
+    subGroup: 'PolicyAssist',
     type: 'prompt',
-    description: 'Three follow-up prompts to extend the PolicyAssist bot: enforce strict professional grounding, add a helpdesk escalation path for out-of-scope queries, and generate a shareable standalone HTML chat interface.',
-    filename: '24_PolicyAssist_Extension_Prompts.txt',
-    tags: ['File 24', 'PolicyAssist', 'Extension', 'Vibe-Coding', 'Google AI Studio'],
-    usageTip: 'PolicyAssist Extension Tip: Run these three prompts sequentially in the same Google AI Studio chat to progressively enhance the bot after the initial build.',
-    downloadContent: `POLICYASSIST EXTENSION PROMPTS
-
-Extension 1 — Add Strict Grounding & Tone
-Ensure all responses adopt a concise, objective, and professional advisory tone. Never speculate — if a detail is not explicitly stated in the policy directives, clarify what is missing.
-
-Extension 2 — Add an Escalation Path
-If a query falls outside the provided reference documents or exceeds policy approval limits, explicitly direct the officer to the Central Procurement Office or Finance Helpdesk at helpdesk@defencetech.gov.sg.
-
-Extension 3 — Build a Shareable Chat Interface
-Generate a standalone HTML/JavaScript chat interface where officers can submit policy queries. Include document citation tags, confidence badges, and a DefenceTech banner placeholder.`
+    description: 'Follow-up prompt to enforce concise, objective, and professional advisory tone in PolicyAssist responses — with strict grounding and no speculation on undocumented policy details.',
+    filename: 'policyassist-ext1-grounding.txt',
+    tags: ['PolicyAssist', 'Extension', 'Tone', 'Grounding', 'Vibe-Coding'],
+    usageTip: 'Extension Tip: Paste into the same Google AI Studio chat after building the PolicyAssist bot (P1) to enforce strict professional grounding.',
+    downloadContent: `Ensure all responses adopt a concise, objective, and professional advisory tone. Never speculate — if a detail is not explicitly stated in the policy directives, clarify what is missing.`
+  },
+  {
+    id: 'res-30-policyassist-ext2',
+    fileNumber: '30',
+    displayId: 'P7',
+    title: 'P7 — PolicyAssist Extension — Escalation Path',
+    format: 'Vibe-Coding Prompt',
+    fileSize: 'Extension Prompt',
+    icon: 'Zap',
+    category: 'prompts',
+    session: 'vibe-coding',
+    subGroup: 'PolicyAssist',
+    type: 'prompt',
+    description: 'Follow-up prompt to add a helpdesk escalation path to the PolicyAssist bot — directing officers to the Central Procurement Office or Finance Helpdesk when queries fall outside available policy documents.',
+    filename: 'policyassist-ext2-escalation.txt',
+    tags: ['PolicyAssist', 'Extension', 'Escalation', 'Helpdesk', 'Vibe-Coding'],
+    usageTip: 'Extension Tip: Run this after P6 in the same Google AI Studio chat to add a structured escalation path for out-of-scope queries.',
+    downloadContent: `If a query falls outside the provided reference documents or exceeds policy approval limits, explicitly direct the officer to the Central Procurement Office or Finance Helpdesk at helpdesk@defencetech.gov.sg.`
+  },
+  {
+    id: 'res-31-policyassist-ext3',
+    fileNumber: '31',
+    displayId: 'P8',
+    title: 'P8 — PolicyAssist Extension — Shareable Chat Interface',
+    format: 'Vibe-Coding Prompt',
+    fileSize: 'Extension Prompt',
+    icon: 'Zap',
+    category: 'prompts',
+    session: 'vibe-coding',
+    subGroup: 'PolicyAssist',
+    type: 'prompt',
+    description: 'Final extension prompt to generate a standalone HTML/JavaScript chat interface for PolicyAssist — with document citation tags, confidence badges, and a DefenceTech banner placeholder.',
+    filename: 'policyassist-ext3-chat-interface.txt',
+    tags: ['PolicyAssist', 'Extension', 'HTML Interface', 'Chat UI', 'Vibe-Coding'],
+    usageTip: 'Extension Tip: Run this last in your Google AI Studio chat to generate a shareable standalone web interface for the PolicyAssist bot.',
+    downloadContent: `Generate a standalone HTML/JavaScript chat interface where officers can submit policy queries. Include document citation tags, confidence badges, and a DefenceTech banner placeholder.`
   }
 ];
 

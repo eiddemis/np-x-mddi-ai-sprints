@@ -8,10 +8,10 @@ import { AgendaModal } from './components/AgendaModal';
 import { ResourceModal } from './components/ResourceModal';
 import { AgendaItem, ResourceItem } from './types';
 
-export type ActivePage = 'agenda' | 'resources';
+export type ActivePage = 'home' | 'agenda' | 'resources';
 
 export default function App() {
-  const [activePage, setActivePage] = useState<ActivePage>('agenda');
+  const [activePage, setActivePage] = useState<ActivePage>('home');
   const [selectedAgendaItem, setSelectedAgendaItem] = useState<AgendaItem | null>(null);
   const [selectedResourceItem, setSelectedResourceItem] = useState<ResourceItem | null>(null);
 
@@ -20,12 +20,19 @@ export default function App() {
       <Header currentPage={activePage} onNavigate={setActivePage} />
 
       <main>
-        {activePage === 'agenda' ? (
+        {activePage === 'home' ? (
           <>
-            <Hero onNavigateToResources={() => setActivePage('resources')} />
-            <Agenda onSelectAgendaItem={(item) => setSelectedAgendaItem(item)} />
-            <CtaBanner />
+            <Hero
+              onNavigateToResources={() => setActivePage('resources')}
+              onNavigateToAgenda={() => setActivePage('agenda')}
+            />
+            <CtaBanner
+              onNavigateToAgenda={() => setActivePage('agenda')}
+              onNavigateToResources={() => setActivePage('resources')}
+            />
           </>
+        ) : activePage === 'agenda' ? (
+          <Agenda onSelectAgendaItem={(item) => setSelectedAgendaItem(item)} />
         ) : (
           <Resources onSelectResource={(res) => setSelectedResourceItem(res)} />
         )}

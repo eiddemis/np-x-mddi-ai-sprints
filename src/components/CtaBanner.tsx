@@ -1,7 +1,12 @@
 import React from 'react';
 import { Sparkles, ArrowRight, FolderOpen, CheckCircle2 } from 'lucide-react';
 
-export const CtaBanner: React.FC = () => {
+interface CtaBannerProps {
+  onNavigateToAgenda: () => void;
+  onNavigateToResources: () => void;
+}
+
+export const CtaBanner: React.FC<CtaBannerProps> = ({ onNavigateToAgenda, onNavigateToResources }) => {
   return (
     <section className="py-20 bg-[#0A192F] relative overflow-hidden border-b border-[#112240]">
       {/* Background Glows */}
@@ -46,21 +51,21 @@ export const CtaBanner: React.FC = () => {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <a
-              href="#agenda"
+            <button
+              onClick={onNavigateToAgenda}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-immersive-btn text-[#0A192F] font-black text-sm shadow-xl shadow-[#64FFDA]/20 transition-all cursor-pointer transform hover:-translate-y-0.5"
             >
               <span>View Programme Agenda</span>
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </button>
 
-            <a
-              href="#resources"
+            <button
+              onClick={onNavigateToResources}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#0A192F] hover:bg-[#1d3557] text-[#64FFDA] border border-[#64FFDA]/30 font-semibold text-xs transition-all cursor-pointer"
             >
               <FolderOpen className="w-4 h-4 text-[#64FFDA]" />
               <span>Access Course Resources</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>

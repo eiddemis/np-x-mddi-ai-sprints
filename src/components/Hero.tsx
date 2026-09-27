@@ -4,9 +4,10 @@ import heroBg from '../assets/images/sprint_hero_bg.jpg';
 
 interface HeroProps {
   onNavigateToResources: () => void;
+  onNavigateToAgenda: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onNavigateToResources }) => {
+export const Hero: React.FC<HeroProps> = ({ onNavigateToResources, onNavigateToAgenda }) => {
   return (
     <section className="relative overflow-hidden py-16 md:py-24 bg-[#0A192F] border-b border-[#112240]">
       {/* Background Graphic & Grid Overlay */}
@@ -64,13 +65,13 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateToResources }) => {
 
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mb-0">
-            <a
-              href="#agenda"
+            <button
+              onClick={onNavigateToAgenda}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-immersive-btn text-[#0A192F] font-bold text-sm shadow-xl shadow-[#64FFDA]/20 transition-all cursor-pointer transform hover:-translate-y-0.5"
             >
               <span>Explore Programme Agenda</span>
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </button>
             <button
               onClick={onNavigateToResources}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#112240] hover:bg-[#1d3557] text-[#CCD6F6] hover:text-[#64FFDA] border border-[#64FFDA]/30 hover:border-[#64FFDA] font-semibold text-sm transition-all cursor-pointer"

@@ -19,14 +19,13 @@ const SESSION_TABS: { id: SessionTab; label: string; icon: React.ReactNode; coun
 
 const SUB_GROUP_ORDER: Record<string, string[]> = {
   'enterprise-ai': ['Apps', 'Skills'],
-  'vibe-coding': ['Reference', 'Demo 1: TechScan', 'Demo 2: PolicyAssist'],
+  'vibe-coding': ['TechScan Dashboard', 'PolicyAssist'],
 };
 
 const SUB_GROUP_DESCRIPTIONS: Record<string, string> = {
   Skills: 'Analysis prompts, charts, reports & skill packaging',
-  Reference: 'Prompt cheat sheet',
-  'Demo 1: TechScan': 'Build the emerging-tech assessment dashboard step by step',
-  'Demo 2: PolicyAssist': 'Build the claims & policy checker bot',
+  'TechScan Dashboard': 'Build the emerging-tech assessment dashboard step by step',
+  'PolicyAssist': 'Build the claims & policy checker bot',
 };
 
 const APP_SECTION_ORDER: Record<string, string[]> = {

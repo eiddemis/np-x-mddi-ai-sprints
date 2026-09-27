@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo & Title */}
-          <button onClick={() => handleNav('agenda')} className="flex items-center gap-3 group cursor-pointer">
+          <button onClick={() => handleNav('home')} className="flex items-center gap-3 group cursor-pointer">
             <div className="flex items-center justify-center w-10 h-10 rounded-lg border border-[#64FFDA]/40 bg-[#020C1B] glow-cyan transition-transform group-hover:scale-105 shadow-inner">
               <Sparkles className="w-5 h-5 text-[#64FFDA]" />
             </div>
@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {(['agenda', 'resources'] as ActivePage[]).map((page) => (
+            {(['home', 'agenda', 'resources'] as ActivePage[]).map((page) => (
               <button
                 key={page}
                 onClick={() => handleNav(page)}
@@ -65,7 +65,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                   currentPage === page ? 'text-[#64FFDA]' : 'text-[#8892B0] hover:text-[#64FFDA]'
                 }`}
               >
-                {page === 'agenda' ? 'Agenda' : 'Copy & Paste'}
+                {page === 'home' ? 'Home' : page === 'agenda' ? 'Agenda' : 'Course Resources'}
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-[#64FFDA] transition-all duration-300 ${
                   currentPage === page ? 'w-full' : 'w-0 group-hover:w-full'
                 }`} />
@@ -95,7 +95,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               }`}
             >
               <FolderOpen className="w-3.5 h-3.5" />
-              <span>Copy & Paste</span>
+              <span>Course Resources</span>
             </button>
           </div>
 
@@ -115,6 +115,14 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
         <div className="md:hidden bg-[#0A192F]/95 backdrop-blur-xl border-b border-[#64FFDA]/20 px-4 pt-3 pb-6 space-y-4">
           <div className="flex flex-col space-y-3">
             <button
+              onClick={() => handleNav('home')}
+              className={`text-sm font-semibold uppercase tracking-wider py-2 border-b border-[#112240] text-left transition-colors ${
+                currentPage === 'home' ? 'text-[#64FFDA]' : 'text-[#CCD6F6] hover:text-[#64FFDA]'
+              }`}
+            >
+              Home
+            </button>
+            <button
               onClick={() => handleNav('agenda')}
               className={`text-sm font-semibold uppercase tracking-wider py-2 border-b border-[#112240] text-left transition-colors ${
                 currentPage === 'agenda' ? 'text-[#64FFDA]' : 'text-[#CCD6F6] hover:text-[#64FFDA]'
@@ -128,7 +136,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                 currentPage === 'resources' ? 'text-[#64FFDA]' : 'text-[#CCD6F6] hover:text-[#64FFDA]'
               }`}
             >
-              Copy & Paste
+              Course Resources
             </button>
           </div>
           <div className="pt-2 space-y-2">
@@ -144,7 +152,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               className="w-full flex items-center justify-center gap-2 text-xs font-bold py-2.5 px-4 rounded-lg bg-immersive-btn text-[#0A192F]"
             >
               <FolderOpen className="w-4 h-4" />
-              <span>Copy & Paste Hub</span>
+              <span>Course Resources</span>
             </button>
           </div>
         </div>
