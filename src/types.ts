@@ -28,6 +28,8 @@ export interface ResourceItem {
   downloadUrl?: string;
   tags: string[];
   category?: 'data' | 'prompts' | 'governance' | 'case_study' | 'tools';
+  session?: 'problem-framing' | 'enterprise-ai' | 'vibe-coding';
+  subGroup?: string;
   type?: 'spreadsheet' | 'prompt' | 'document' | 'email' | 'code';
   tsvContent?: string;
   csvContent?: string;

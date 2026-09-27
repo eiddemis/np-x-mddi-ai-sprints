@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, ShieldCheck, Sparkles } from 'lucide-react';
+import { Search, ShieldCheck, Sparkles, BookOpen, Cpu, Code2 } from 'lucide-react';
 import { ResourceItem } from '../types';
 import { RESOURCES } from '../data/sprintData';
 import { ResourceCard } from './ResourceCard';
@@ -8,20 +8,33 @@ interface ResourcesProps {
   onSelectResource: (resource: ResourceItem) => void;
 }
 
+type SessionTab = 'all' | 'problem-framing' | 'enterprise-ai' | 'vibe-coding';
+
+const SESSION_TABS: { id: SessionTab; label: string; icon: React.ReactNode; count: number }[] = [
+  { id: 'all', label: 'All Files', icon: <ShieldCheck className="w-3.5 h-3.5" />, count: RESOURCES.length },
+  { id: 'problem-framing', label: 'Problem Framing', icon: <BookOpen className="w-3.5 h-3.5" />, count: RESOURCES.filter(r => r.session === 'problem-framing').length },
+  { id: 'enterprise-ai', label: 'Enterprise AI', icon: <Cpu className="w-3.5 h-3.5" />, count: RESOURCES.filter(r => r.session === 'enterprise-ai').length },
+  { id: 'vibe-coding', label: 'Vibe Coding', icon: <Code2 className="w-3.5 h-3.5" />, count: RESOURCES.filter(r => r.session === 'vibe-coding').length },
+];
+
+const SUB_GROUP_ORDER: Record<string, string[]> = {
+  'enterprise-ai': ['Apps', 'Skills'],
+  'vibe-coding': ['Reference', 'Demo 1: TechScan', 'Demo 2: PolicyAssist'],
+};
+
+const SUB_GROUP_DESCRIPTIONS: Record<string, string> = {
+  Apps: 'SharePoint connector + Daily Briefing',
+  Skills: 'Analysis prompts, charts, reports & skill packaging',
+  Reference: 'Prompt cheat sheet',
+  'Demo 1: TechScan': 'Build the emerging-tech assessment dashboard step by step',
+  'Demo 2: PolicyAssist': 'Build the claims & policy checker bot',
+};
+
 export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedSession, setSelectedSession] = useState<SessionTab>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
-  const categories = [
-    { id: 'all', label: 'All Files (01–24)', count: RESOURCES.length },
-    { id: 'data', label: 'Spreadsheets & Data', count: RESOURCES.filter(r => r.category === 'data').length },
-    { id: 'prompts', label: 'AI Prompts & Specs', count: RESOURCES.filter(r => r.category === 'prompts').length },
-    { id: 'governance', label: 'Frameworks & Cheatsheets', count: RESOURCES.filter(r => r.category === 'governance').length },
-    { id: 'case_study', label: 'Case Studies & Emails', count: RESOURCES.filter(r => r.category === 'case_study').length }
-  ];
-
-  // Sort resources by fileNumber ascending (01, 02, 03... 11)
   const sortedResources = useMemo(() => {
     return [...RESOURCES].sort((a, b) => {
       const numA = parseInt(a.fileNumber || '99', 10);
@@ -32,7 +45,7 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
 
   const filteredResources = useMemo(() => {
     return sortedResources.filter((res) => {
-      const matchesCategory = selectedCategory === 'all' || res.category === selectedCategory;
+      const matchesSession = selectedSession === 'all' || res.session === selectedSession;
       const matchesSearch =
         searchQuery.trim() === '' ||
         (res.fileNumber && res.fileNumber.includes(searchQuery)) ||
@@ -40,34 +53,51 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
         res.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         res.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase())) ||
         (res.downloadContent && res.downloadContent.toLowerCase().includes(searchQuery.toLowerCase()));
-      return matchesCategory && matchesSearch;
+      return matchesSession && matchesSearch;
     });
-  }, [sortedResources, selectedCategory, searchQuery]);
+  }, [sortedResources, selectedSession, searchQuery]);
 
-  // Copy helper with feedback
   const handleCopyText = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
     setCopiedId(id);
-    setTimeout(() => {
-      setCopiedId(null);
-    }, 2500);
+    setTimeout(() => setCopiedId(null), 2500);
   };
+
+  // For grouped views, organise by subGroup order
+  const groupedView = useMemo(() => {
+    if (searchQuery.trim() !== '' || !(selectedSession in SUB_GROUP_ORDER)) return null;
+    const order = SUB_GROUP_ORDER[selectedSession];
+    return order.map(group => ({
+      group,
+      items: filteredResources.filter(r => r.subGroup === group),
+    })).filter(g => g.items.length > 0);
+  }, [filteredResources, selectedSession, searchQuery]);
+
+  const renderCard = (resource: ResourceItem) => (
+    <ResourceCard
+      key={resource.id}
+      resource={resource}
+      onSelectResource={onSelectResource}
+      copiedId={copiedId}
+      onCopyText={handleCopyText}
+    />
+  );
 
   return (
     <section id="resources" className="py-20 bg-[#0A192F] relative border-b border-[#112240]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#112240] border border-[#64FFDA]/40 text-[#64FFDA] text-xs font-bold uppercase tracking-wider mb-4 shadow-lg glow-cyan">
             <ShieldCheck className="w-4 h-4 text-[#64FFDA]" />
             <span>Numbered Course Files 01–24 · Copy & Paste Hub</span>
           </div>
-          
+
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#E6F1FF] tracking-tight mb-4">
             Course Files & <span className="text-[#64FFDA] text-glow">Copy-Paste Hub</span>
           </h2>
-          
+
           <p className="text-sm sm:text-base text-[#CCD6F6] leading-relaxed">
             All 24 course files formatted in unified executive cards with one-click clipboard copy, structured table grids, and formatted prompt views. Fully compliant with enterprise laptop restriction policies.
           </p>
@@ -98,27 +128,28 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
           </div>
         </div>
 
-        {/* Search & Category Filter Controls */}
+        {/* Session Filter Tabs + Search */}
         <div className="space-y-4 mb-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            
-            {/* Category Filter Pills */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+
+            {/* Session Tabs */}
             <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
-              {categories.map((cat) => (
+              {SESSION_TABS.map((tab) => (
                 <button
-                  key={cat.id}
-                  onClick={() => setSelectedCategory(cat.id)}
+                  key={tab.id}
+                  onClick={() => setSelectedSession(tab.id)}
                   className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-                    selectedCategory === cat.id
+                    selectedSession === tab.id
                       ? 'bg-[#64FFDA] text-[#0A192F] shadow-md shadow-[#64FFDA]/20'
                       : 'bg-[#112240] text-[#CCD6F6] hover:bg-[#1d3557] hover:text-[#64FFDA] border border-[#64FFDA]/15'
                   }`}
                 >
-                  <span>{cat.label}</span>
-                  <span className={`px-1.5 py-0.2 rounded-full text-[10px] font-mono ${
-                    selectedCategory === cat.id ? 'bg-[#0A192F] text-[#64FFDA]' : 'bg-[#0A192F] text-[#8892B0]'
+                  {tab.icon}
+                  <span>{tab.label}</span>
+                  <span className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono ${
+                    selectedSession === tab.id ? 'bg-[#0A192F] text-[#64FFDA]' : 'bg-[#0A192F] text-[#8892B0]'
                   }`}>
-                    {cat.count}
+                    {tab.count}
                   </span>
                 </button>
               ))}
@@ -146,27 +177,45 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
           </div>
         </div>
 
-        {/* Unified List: All Files (01 to 11) in the Exact Executive Card Structure */}
-        <div className="space-y-8">
-          {filteredResources.map((resource) => (
-            <ResourceCard
-              key={resource.id}
-              resource={resource}
-              onSelectResource={onSelectResource}
-              copiedId={copiedId}
-              onCopyText={handleCopyText}
-            />
-          ))}
-        </div>
+        {/* Resource List */}
+        {groupedView ? (
+          // Grouped view with sub-section dividers
+          <div className="space-y-12">
+            {groupedView.map(({ group, items }) => (
+              <div key={group}>
+                {/* Sub-group header */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-px flex-1 bg-[#64FFDA]/15" />
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#112240] border border-[#64FFDA]/25">
+                    <span className="text-xs font-bold text-[#64FFDA] uppercase tracking-wider">{group}</span>
+                    <span className="text-[10px] text-[#8892B0] font-mono">{items.length}</span>
+                  </div>
+                  <div className="h-px flex-1 bg-[#64FFDA]/15" />
+                </div>
+                {SUB_GROUP_DESCRIPTIONS[group] && (
+                  <p className="text-xs text-[#8892B0] mb-5 -mt-2 text-center">{SUB_GROUP_DESCRIPTIONS[group]}</p>
+                )}
+                <div className="space-y-8">
+                  {items.map(renderCard)}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          // Flat list (All tab or search results)
+          <div className="space-y-8">
+            {filteredResources.map(renderCard)}
+          </div>
+        )}
 
-        {/* Empty state when search doesn't match */}
+        {/* Empty state */}
         {filteredResources.length === 0 && (
           <div className="text-center py-16 bg-[#112240] rounded-2xl border border-[#64FFDA]/20">
             <Search className="w-8 h-8 text-[#8892B0] mx-auto mb-3" />
             <p className="text-base font-bold text-[#E6F1FF]">No resources found for "{searchQuery}"</p>
-            <p className="text-xs text-[#8892B0] mt-1">Try clearing your search query or selecting a different category.</p>
+            <p className="text-xs text-[#8892B0] mt-1">Try clearing your search query or selecting a different session.</p>
             <button
-              onClick={() => { setSearchQuery(''); setSelectedCategory('all'); }}
+              onClick={() => { setSearchQuery(''); setSelectedSession('all'); }}
               className="mt-4 px-4 py-2 rounded-xl bg-[#0A192F] text-[#64FFDA] text-xs font-bold border border-[#64FFDA]/30 cursor-pointer"
             >
               Reset Filters
