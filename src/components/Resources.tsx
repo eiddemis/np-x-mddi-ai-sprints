@@ -8,10 +8,9 @@ interface ResourcesProps {
   onSelectResource: (resource: ResourceItem) => void;
 }
 
-type SessionTab = 'all' | 'enterprise-ai' | 'vibe-coding';
+type SessionTab = 'enterprise-ai' | 'vibe-coding';
 
 const SESSION_TABS: { id: SessionTab; label: string; icon: React.ReactNode; count: number }[] = [
-  { id: 'all', label: 'All Files', icon: <ShieldCheck className="w-3.5 h-3.5" />, count: RESOURCES.length },
   { id: 'enterprise-ai', label: 'Enterprise AI', icon: <Cpu className="w-3.5 h-3.5" />, count: RESOURCES.filter(r => r.session === 'enterprise-ai').length },
   { id: 'vibe-coding', label: 'Vibe Coding', icon: <Code2 className="w-3.5 h-3.5" />, count: RESOURCES.filter(r => r.session === 'vibe-coding').length },
 ];
@@ -32,7 +31,7 @@ const APP_SECTION_ORDER: Record<string, string[]> = {
 };
 
 export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
-  const [selectedSession, setSelectedSession] = useState<SessionTab>('all');
+  const [selectedSession, setSelectedSession] = useState<SessionTab>('enterprise-ai');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
@@ -46,7 +45,7 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
 
   const filteredResources = useMemo(() => {
     return sortedResources.filter((res) => {
-      const matchesSession = selectedSession === 'all' || res.session === selectedSession;
+      const matchesSession = searchQuery.trim() !== '' || res.session === selectedSession;
       const matchesSearch =
         searchQuery.trim() === '' ||
         (res.fileNumber && res.fileNumber.includes(searchQuery)) ||
@@ -67,7 +66,7 @@ export const Resources: React.FC<ResourcesProps> = ({ onSelectResource }) => {
 
   // For grouped views, organise by subGroup order
   const groupedView = useMemo(() => {
-    if (searchQuery.trim() !== '' || !(selectedSession in SUB_GROUP_ORDER)) return null;
+    if (searchQuery.trim() !== '') return null;
     const order = SUB_GROUP_ORDER[selectedSession];
     return order.map(group => ({
       group,
